@@ -1,3 +1,9 @@
 baseURL = "https://www.hamzaagar.com/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+
+[en]
+  contentdir = "content/en"
+
+[tr]
+  contentdir = "content/tr"
