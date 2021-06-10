@@ -1,22 +1,22 @@
 baseURL = "https://www.hamzaagar.com/"
-title = "Hugo Zzo Theme"
+title = "Hamza Ağar Blog"
 theme = "zzo"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "tr"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy;{year}, All Rights Reserved"
+copyright = "{year}, CC Licences. (Kaynak belirterek paylaşabilirsiniz)"
 timeout = 10000
 enableEmoji = true
-paginate = 13
+paginate = 15
 rssLimit = 100
 
 enableGitInfo = false
-googleAnalytics = "G-4XZBS24EZJ"
+googleAnalytics = "G-EFPTME6X8G"
 
 [markup]
   [markup.goldmark]

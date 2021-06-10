@@ -1,4 +1,4 @@
-logoText = "Zzo"
+logoText = "Hamza Ağar"
 logoType = "short" # long, short
 description = "The Zzo theme for Hugo example site."
 custom_css = []
@@ -7,7 +7,7 @@ useFaviconGenerator = true # https://www.favicon-generator.org/
 meta_image = ""
 themecolor = ""
 
-themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"]
+themeOptions = ["dark", "light"]
 notAllowedTypesInHome = ["contact", "talks", "about", "showcase", "publication", "presentation", "resume"]
 notAllowedTypesInHomeSidebar = ["about", "archive", "showcase", "publication", "presentation", "resume"]
 notAllowedTypesInArchive = ["about", "talks", "showcase", "publication", "presentation", "resume"]
@@ -39,7 +39,7 @@ enableGoToTop = true
 enableWhoami = true
 summaryShape = "classic" # card, classic, compact
 searchResultPosition = "main" # side, main
-archiveGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
+archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
 archivePaginate = 13
 paginateWindow = 1
 talksPaginate = 5
@@ -56,14 +56,14 @@ publicationIcon = "📚"
 typeIcon = "🎯"
 
 # whoami
-myname = "zzossig"
-email = "zzossig@gmail.com"
+myname = "Hamza Ağar"
+email = "aimtunecs@gmail.com"
 whoami = "Web Developer"
 bioImageUrl = ""
 useGravatar = false
-location = "Seoul, Korea"
+location = "İzmir, Turkey"
 organization = "Hugo"
-link = "https://zzossig.io/ko"
+link = "https://hamzaagar.com/tr"
 
 # sidebar
 enableBio = true
@@ -92,7 +92,7 @@ enableLangChange = true
 enableThemeChange = true
 
 # service
-googleTagManager = "" # GTM-XXXXXX
+googleTagManager = "GTM-54QJM89" # GTM-XXXXXX
 baiduAnalytics = ""
 enableBusuanzi = false
 busuanziSiteUV = true
@@ -105,7 +105,7 @@ updateFrequency = ""
 fullContents = false
 
 # comment
-enableComment = true
+enableComment = false
 disqus_shortname = ""
 commento = false
 
@@ -157,18 +157,17 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  email = "mailto:your@email.com"
+  email = "mailto:aimtunecs@gmail.com"
   phone = ""
-  facebook = "http://example.org/"
-  twitter = "http://example.org/"
-  github = "https://github.com/zzossig/hugo-theme-zzo"
+  twitter = "https://twitter.com/AimTune"
+  github = "https://github.com/AimTune/"
   stack-overflow = ""
-  instagram = ""
+  instagram = "https://instagram.com/AimTune"
   google-plus = ""
   youtube = ""
   medium = ""
   tumblr = ""
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/hamzaagar/"
   pinterest = ""
   stack-exchange = ""
   telegram = ""
@@ -176,7 +175,7 @@ commento = false
   weibo = ""
   douban = ""
   csdn = ""
-  gitlab = ""
+  gitlab = "https://gitlab.com/AimTune/"
   mastodon = ""
   jianshu = ""
   zhihu = ""
@@ -197,10 +196,8 @@ commento = false
 
 # possible share name: ["facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line", "pocket", "feedly", "hatena", "pinterest", "delicious", "google"]
 [[share]]
-  name = "facebook"
-  username = ""
-[[share]]
   name = "twitter"
+  username = "AimTune"
 
 [[footerLinks]]
   name = ""

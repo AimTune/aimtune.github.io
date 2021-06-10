@@ -1,7 +1,7 @@
 +++
 aliases = ["posts","articles","blog","showcase","docs"]
-title = "Posts"
-author = "Hugo Authors"
+title = "Yazılar"
+author = "Hamza Ağar"
 tags = ["index"]
-description = "Post page"
+description = "Yazılar"
 +++
