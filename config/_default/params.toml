@@ -7,6 +7,7 @@ useFaviconGenerator = true # https://www.favicon-generator.org/
 meta_image = ""
 themecolor = "dark"
 
+themeOptions = ["dark"]
 notAllowedTypesInHome = ["contact", "talks", "about", "showcase", "publication", "presentation", "resume"]
 notAllowedTypesInHomeSidebar = ["about", "archive", "showcase", "publication", "presentation", "resume"]
 notAllowedTypesInArchive = ["about", "talks", "showcase", "publication", "presentation", "resume"]
@@ -88,7 +89,7 @@ showPoweredBy = true
 showFeedLinks = true
 showSocialLinks = true
 enableLangChange = true
-enableThemeChange = true
+enableThemeChange = false
 
 # service
 googleTagManager = "GTM-54QJM89" # GTM-XXXXXX
