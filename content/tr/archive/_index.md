@@ -6,4 +6,4 @@ description: Arşiv Sayfası
 titleWrap: wrap
 ---
 
-arşiv sayfası
+Arşiv Sayfası
