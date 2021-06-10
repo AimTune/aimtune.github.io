@@ -1,6 +1,6 @@
 logoText = "Hamza Ağar"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "Hamza Ağar Blog"
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -62,7 +62,7 @@ whoami = "Web Developer"
 bioImageUrl = ""
 useGravatar = false
 location = "İzmir, Turkey"
-organization = "Hugo"
+organization = "-"
 link = "https://hamzaagar.com/tr"
 
 # sidebar
