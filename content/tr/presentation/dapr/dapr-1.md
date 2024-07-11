@@ -209,4 +209,6 @@ reveal:
       - sub:
           - |
             # Dinlediğiniz için teşekkürler
+            #### Kaynaklar: [dapr.io](https://dapr.io/) - [ChatGPT](https://chatgpt.com/)
+            #### Örnekler Reposu: [aimtune/dapr-examples](https://github.com/AimTune/dapr-examples)
 ---
