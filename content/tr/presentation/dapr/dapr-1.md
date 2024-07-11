@@ -89,7 +89,7 @@ reveal:
             #### Bindings
       - sub:
           - |
-            #### Distributed lock
+            #### Distributed Lock
       - sub:
           - |
             #### Cryptography
@@ -110,7 +110,7 @@ reveal:
             ### Resiliency*
       - sub:
           - |
-            Hata toleransı sağlamak için zaman aşımı, yeniden deneme, devre kesici ve geri çekilme gibi politikalar tanımlamayı ve uygulamayı destekler.
+            Hata toleransı sağlamak için timeout, retry ve circuit breaker gibi politikalar tanımlamayı ve uygulamayı destekler. Ayrıca bunları sadece servis iletişimlerinde değil state storage'lara vs. de uygulayabiliriz.
 
       - sub:
           - |
@@ -141,7 +141,7 @@ reveal:
             #### Servis keşfi ve yük dengeleme özellikleri içerir.
       - sub:
           - |
-            #### Servislerde araya girdiği için security, resiliency, observability gibi yapıları da bu istekler çalıştığı anda uygulayabilir.
+            #### Servislerdeki iletişimde araya girdiği için security, resiliency, observability gibi yapıları da bu istekler çalıştığı anda uygulayabilir.
 
   - fragment:
       - sub:
@@ -160,17 +160,53 @@ reveal:
           - |
             ![State Store Example](/images/slides/dapr/statestore.png)
 
-  - main:
+  - fragment:
       - sub:
           - |
-            ## Secrets Management
-            - Güvenli bilgi yönetimini sağlar.
-            - API üzerinden bu gizli bilgileri alabilmeyi kolaylaştırır. Örneğin  DB
-            - Çeşitli ürünler ile uyumludur.
+            # Secrets Management
+      - sub:
+          - |
+            #### Güvenlik açısından hassas bilgilerin korunmasını sağlar.
+      - sub:
+          - |
+            #### Şifreler, API anahtarları, güvenlik sertifikaları gibi gizli bilgilerin yönetimini içerir.
+      - sub:
+          - |
+            #### Erişim kontrolü ve şifreleme kullanılarak güvenli bir şekilde saklanır ve erişilir.
+      - sub:
+          - |
+            #### Farklı ürünler ile entegre edilebilir (Azure Key Vault, AWS Secrets Manager, HashiCorp Vault, vb.).
+      - sub:
+          - |
+            ![Secrets Management Example](/images/slides/dapr/secretstore.png)
+
+  - fragment:
+      - sub:
+          - |
+            # Configuration Management
+      - sub:
+          - |
+            #### Uygulamanın çalışma şeklini belirleyen ayarların yönetimini sağlar.
+      - sub:
+          - |
+            #### Uygulama ayarları, çevresel değişkenler ve yapılandırma dosyalarını içerir.
+      - sub:
+          - |
+            #### Uygulama yeniden başlatılmadan veya kod değiştirilmeden kolayca güncellenebilir.
+      - sub:
+          - |
+            #### Farklı ürünler ile entegre edilebilir (Redis, Consul, Kubernetes ConfigMaps, Azure App Configuration vb.).
+      - sub:
+          - |
+            ![Configuration Management Example](/images/slides/dapr/configstore.png)
 
   - main:
       - sub:
           - |
-            ## Geliştirici Deneyimi
-            Uygulama geliştiricileri, Dapr'ın sağladığı API'leri kullanarak mikroservislerini daha hızlı ve güvenilir bir şekilde oluşturabilir ve yönetebilir.
+            # Demo
+
+  - main:
+      - sub:
+          - |
+            # Dinlediğiniz için teşekkürler
 ---
