@@ -98,11 +98,8 @@ Cross cutting concerns, yazılım sisteminde birçok modül veya katmanda ortak 
 
 {{< slide template="hamzadark2" >}}
 
-{{% fragment %}}
-
 ### Dapr'ın Temel Bileşenleri
 
-{{% /fragment %}}
 {{% fragment %}}
 
 ##### Service Invocation\*
@@ -127,11 +124,9 @@ Cross cutting concerns, yazılım sisteminde birçok modül veya katmanda ortak 
 ---
 
 {{< slide template="hamzadark2" >}}
-{{% fragment %}}
 
 ### Dapr'ın Temel Bileşenleri
 
-{{% /fragment %}}
 {{% fragment %}}
 
 ##### Pub/Sub Messaging
