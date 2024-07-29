@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Hamza Ağar</title>
+    <link>http://localhost:1313/tr/topics/hugo/</link>
+    <description>Recent content in Hugo on Hamza Ağar</description>
+    <generator>Hugo</generator>
+    <language>tr</language>
+    <copyright>{year}, CC Licences. (Kaynak belirterek paylaşabilirsiniz)</copyright>
+    <lastBuildDate>Wed, 30 Oct 2019 20:48:10 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tr/topics/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dapr 1</title>
+      <link>http://localhost:1313/tr/presentations/dapr/dapr-1/</link>
+      <pubDate>Wed, 30 Oct 2019 20:48:10 +0900</pubDate>
+      <guid>http://localhost:1313/tr/presentations/dapr/dapr-1/</guid>
+      <description>&#xD;Hello world! #package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Hello world!&amp;#34;) } This is my first slide. # Hello world! #package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Hello world!&amp;quot;) } This is my first slide.&#xA;One&#xD;Two&#xD;Three&#xD;Section slide 1 # Section slide 2 #&#xD;📈 #📊 # You found the speaker notes! Hello world! asd&#xA;package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Hello world!&amp;quot;) } </description>
+    </item>
+  </channel>
+</rss>
