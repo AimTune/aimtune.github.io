@@ -1,0 +1,90 @@
+baseURL = "https://aimtune.github.io/"
+title = "Hamza Ağar Blog"
+theme = ["congo", "reveal-hugo"]
+
+defaultContentLanguage = "tr"
+defaultContentLanguageInSubdir = true
+hasCJKLanguage = true
+
+params.author.name="Hamza Ağar"
+#params.author.image="hamza.jpg"
+params.author.bio="Full-stack Developer @DogusTeknoloji"
+summaryLength = 70
+buildFuture = true
+
+#copyright = "{year}, CC Licences. (Kaynak belirterek paylaşabilirsiniz)"
+timeout = 10000
+enableEmoji = true
+paginate = 15
+rssLimit = 100
+
+enableGitInfo = false
+googleAnalytics = "G-EFPTME6X8G"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS", "SearchIndex"]
+  taxonomy = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+[markup.highlight]
+  codeFences = false
+
+[params.reveal_hugo]
+  highlight_theme = "github"
+[params.reveal_hugo.templates.hamza1]
+background = "#000002"
+transition = "convex"
+[params.reveal_hugo.templates.hamza2]
+background = "#0a274e"
+transition = "convex"
+[params.reveal_hugo.templates.hamza3]
+background = "#3658a3"
+transition = "convex"
+[params.reveal_hugo.templates.hamza4]
+background = "#708eff"
+transition = "convex"
+[params.reveal_hugo.templates.hamza5]
+background = "#bbc9ff"
+transition = "convex"
+[params.reveal_hugo.templates.blue]
+background = "#0011DD"
+transition = "zoom"
+[params.reveal_hugo.templates.hamzadark1]
+background = "#141021"
+[params.reveal_hugo.templates.hamzadark2]
+background = "#3c3557"
+[params.reveal_hugo.templates.hamzadark3]
+background = "#736494"
+[params.reveal_hugo.templates.hamzadark4]
+background = "#c099de"
+[params.reveal_hugo.templates.hamzadark5]
+background = "#f8cbed"
