@@ -7,7 +7,7 @@ defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
 params.author.name="Hamza Ağar"
-params.author.image="img/hamza.png"
+params.author.image="img/hamza2.png"
 params.author.bio="Full-stack Developer @DogusTeknoloji"
 summaryLength = 70
 buildFuture = true
