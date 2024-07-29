@@ -1,6 +1,6 @@
 [params.author]
     name = "Hamza Ağar"
-    #image = "hamza.jpg"
+    image = "img/hamza.png"
     headline = "Mid. Full-stack Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
     bio = "A little bit about you"
     links = [
