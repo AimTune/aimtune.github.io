@@ -16,11 +16,10 @@ enableImageWebp = true
 
 # robots = ""
 fingerprintAlgorithm = "sha256"
-
 [header]
   layout = "basic" # valid options: basic, hamburger, hybrid, custom
-  # logo = "img/logo.jpg"
-  # logoDark = "img/dark-logo.jpg"
+  logo = "img/pikachu.gif"
+  logoDark = "img/pikachu.gif"
   showTitle = true
 
 [footer]
