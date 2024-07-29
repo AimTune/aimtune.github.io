@@ -6,10 +6,10 @@
 # https://jpanther.github.io/congo/docs/configuration/#theme-parameters
 
 colorScheme = "congo"
-defaultAppearance = "light" # valid options: light or dark
+defaultAppearance = "dark"  # valid options: light or dark
 autoSwitchAppearance = true
 
-enableSearch = false
+enableSearch = true
 enableCodeCopy = false
 enableImageLazyLoading = true
 enableImageWebp = true
@@ -17,65 +17,65 @@ enableImageWebp = true
 # robots = ""
 fingerprintAlgorithm = "sha256"
 [header]
-  layout = "basic" # valid options: basic, hamburger, hybrid, custom
-  logo = "img/pikachu.gif"
-  logoDark = "img/pikachu.gif"
-  showTitle = true
+layout = "basic"             # valid options: basic, hamburger, hybrid, custom
+logo = "img/pikachu.gif"
+logoDark = "img/pikachu.gif"
+showTitle = true
 
 [footer]
-  showCopyright = true
-  showThemeAttribution = true
-  showAppearanceSwitcher = false
-  showScrollToTop = true
+showCopyright = true
+showThemeAttribution = true
+showAppearanceSwitcher = true
+showScrollToTop = true
 
 [homepage]
-  layout = "profile"
-  showRecent = false
-  recentLimit = 5
+layout = "profile"
+showRecent = false
+recentLimit = 5
 
 [article]
-  showDate = true
-  showDateUpdated = false
-  showAuthor = true
-  showBreadcrumbs = false
-  showDraftLabel = true
-  showEdit = false
-  # editURL = "https://github.com/username/repo/"
-  editAppendPath = true
-  showHeadingAnchors = true
-  showPagination = true
-  invertPagination = false
-  showReadingTime = true
-  showTableOfContents = false
-  showTaxonomies = false
-  showWordCount = false
-  showComments = false
-  # sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "telegram", "line", "weibo"]
+showDate = true
+showDateUpdated = false
+showAuthor = true
+showBreadcrumbs = false
+showDraftLabel = true
+showEdit = false
+# editURL = "https://github.com/username/repo/"
+editAppendPath = true
+showHeadingAnchors = true
+showPagination = true
+invertPagination = false
+showReadingTime = true
+showTableOfContents = false
+showTaxonomies = false
+showWordCount = false
+showComments = false
+# sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "telegram", "line", "weibo"]
 
 [list]
-  showBreadcrumbs = false
-  showSummary = true
-  showTableOfContents = false
-  showTaxonomies = false
-  groupByYear = true
-  paginationWidth = 1
+showBreadcrumbs = false
+showSummary = true
+showTableOfContents = false
+showTaxonomies = false
+groupByYear = true
+paginationWidth = 1
 
 [sitemap]
-  excludedKinds = ["taxonomy", "term"]
+excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
-  showTermCount = true
+showTermCount = true
 
 [fathomAnalytics]
-  # site = "ABC12345"
+# site = "ABC12345"
 
 [plausibleAnalytics]
-  # domain = "blog.yoursite.com"
-  # event = ""
-  # script = ""
+# domain = "blog.yoursite.com"
+# event = ""
+# script = ""
 
 [verification]
-  # google = ""
-  # bing = ""
-  # pinterest = ""
-  # yandex = ""
+# google = ""
+# bing = ""
+# pinterest = ""
+# yandex = ""
