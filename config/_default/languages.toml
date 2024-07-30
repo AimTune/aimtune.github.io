@@ -6,8 +6,8 @@ languageDirection = "ltr"
 [en.params.author]
 name = "Hamza Agar"
 #image = "hamza.jpg"
-headline = "Mid. Full-stack Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
-bio = "A little bit about you"
+headline = "Mid. Level Software Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
+bio = "Mid. Level Software Developer"
 links = [
   { linkedin = "https://linkedin.com/in/hamzaagar" },
   { github = "https://github.com/aimtune" },
@@ -38,8 +38,8 @@ weight = 1
 languageDirection = "ltr"
 [tr.params.author]
 name = "Hamza Ağar"
-headline = "Mid. Full-stack Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
-bio = "A little bit about you"
+headline = "Mid. Level Software Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
+bio = "Mid. Level Software Developer"
 links = [
   { linkedin = "https://linkedin.com/in/hamzaagar" },
   { github = "https://github.com/aimtune" },
