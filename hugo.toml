@@ -1,7 +1,11 @@
 [markup.goldmark.renderer]
-unsafe = true
+    unsafe = true
 
 [outputFormats.Reveal]
-baseName = "index"
-mediaType = "text/html"
-isHTML = true
+    baseName = "index"
+    mediaType = "text/html"
+    isHTML = true
+
+[services]
+  [services.disqus]
+    shortname = 'aimtune.dev'
