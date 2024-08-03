@@ -8,4 +8,4 @@
 
 [services]
   [services.disqus]
-    shortname = 'aimtune.dev'
+    shortname = 'aimtune-dev'
