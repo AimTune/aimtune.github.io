@@ -41,16 +41,15 @@ Elixir, çeşitli alanlarda kullanılabilir:
 ## Örnek Kod
 
 Aşağıda, basit bir Elixir fonksiyonunun nasıl tanımlanacağını gösteren bir örnek bulunmaktadır:
-
-```elixir
+{{< highlight elixir >}}
 defmodule Merhaba do
-  def selam_ver do
-    IO.puts "Merhaba, Dünya!"
-  end
+   def selam_ver do
+      IO.puts "Merhaba, Dünya!"
+   end
 end
 
 Merhaba.selam_ver()
-```
+{{< /highlight >}}
 
 # Elixir Kurulum Rehberi
 
@@ -60,29 +59,30 @@ Elixir programlama dilini bilgisayarınıza kurmak için aşağıdaki adımları
 
 1. **Homebrew Paket Yöneticisini Kurun** (Eğer Homebrew yüklü değilse):
 
-   ```sh
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
+{{< highlight bash >}}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+{{< /highlight >}}
+
 
 2. **Elixir'i Homebrew ile Kurun**:
 
-   ```sh
-   brew install elixir
-   ```
+{{< highlight bash >}}
+brew install elixir
+{{< /highlight >}}
 
 ## Ubuntu/Linux Üzerine Elixir Kurulumu
 
 1. **Paket Yöneticisini Güncelleyin**:
 
-   ```sh
-   sudo apt-get update
-   ```
+{{< highlight bash >}}
+sudo apt-get update
+{{< /highlight >}}
 
 2. **Elixir'i Kurun**:
 
-   ```sh
-   sudo apt-get install erlang elixir
-   ```
+{{< highlight bash >}}
+sudo apt-get install erlang elixir
+{{< /highlight >}}
 
 ## Windows Üzerine Elixir Kurulumu
 
@@ -100,9 +100,9 @@ Elixir programlama dilini bilgisayarınıza kurmak için aşağıdaki adımları
 
 Elixir'in doğru bir şekilde kurulduğunu doğrulamak için terminal veya komut istemcisinde `elixir -v` komutunu çalıştırabilirsiniz. Bu komut Elixir'in kurulu olduğunu ve sürüm numarasını gösterecektir.
 
-```sh
+{{< highlight bash >}}
 elixir -v
-```
+{{< /highlight >}}
 
 Çıktısı:
 
@@ -131,9 +131,9 @@ IEx (Interactive Elixir), Elixir kodlarını interaktif olarak çalıştırabile
 
 IEx’i başlatmak için terminal veya komut istemcisinde `iex` komutunu yazmanız yeterlidir:
 
-```sh
+{{< highlight bash >}}
 iex
-```
+{{< /highlight >}}
 
 Sizi şöyle bir ekran karşılayacaktır:
 
@@ -146,20 +146,20 @@ iex(1)>
 
 #### Örneğin bir toplama işlemi yapalım ve sonucunu alalım.
 
-```
+{{< highlight elixir >}}
 Erlang/OTP 24 [erts-12.2.1] [source] [64-bit] [smp:20:20] [ds:20:20:10] [async-threads:1] [jit]
 
 Interactive Elixir (1.12.2) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> 1+1
 2
 iex(2)>
-```
+{{< /highlight >}}
 
 #### Yardım Alma
 
 IEx, Elixir modülleri ve fonksiyonları hakkında yardım almanızı sağlar. Yardım almak için h komutunu kullanabilirsiniz. Örneğin IO.puts fonksiyonu hakkında bilgi alalım:
 
-```elixir
+{{< highlight elixir >}}
 iex(2)> h IO.puts
 
                         def puts(device \\ :stdio, item)
@@ -180,7 +180,8 @@ By default, the device is the standard output. It returns :ok if it succeeds.
     #=> error
 
 iex(3)>
-```
+{{< /highlight >}}
+
 
 #### IEx'den Çıkma
 
@@ -190,9 +191,9 @@ IEx kabuğundan çıkmak için aşağıdaki yöntemleri kullanabilirsiniz:
 
 - **System.halt/0 Fonksiyonu:**
 
-```
+{{< highlight elixir >}}
 iex> System.halt()
-```
+{{< /highlight >}}
 
 **Not:**
 **'/0'** bu fonksiyonun parametresiz halini kullanabileceğimizi göstermektedir. Parametre sayısına göre slash işaretinin yanındaki sayı değişebilir.
