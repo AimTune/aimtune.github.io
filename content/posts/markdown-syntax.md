@@ -16,8 +16,6 @@ tags:
 categories:
   - themes
   - syntax
-series:
-  - Themes Guide
 image: images/feature1/markdown.png
 ---
 

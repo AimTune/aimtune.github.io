@@ -14,8 +14,8 @@
   weight = 3
 
 [[main]]
-  name = "Showcase"
-  pageRef = "showcase"
+  name = "Series"
+  pageRef = "series"
   weight = 4
 
 [[main]]

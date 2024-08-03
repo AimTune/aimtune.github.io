@@ -2,6 +2,7 @@
 title: 1 - Elixir nedir? Nasıl Kurulur ve Kullanılır
 date: 2024-07-30T23:42:06+03:00
 description: Bu yazımızda Elixir dilinin temellerine, kurulumuna ve temel kullanımına değineceğiz.
+summary: Bu yazımızda Elixir dilinin temellerine, kurulumuna ve temel kullanımına değineceğiz.
 draft: false
 hideToc: false
 enableToc: true
@@ -13,21 +14,24 @@ tags:
   - erlang
 categories:
   - elixir-serisi
-series:
-  - Elixir
-image: images/posts/elixir.png
+cascade:
+  showEdit: false
+  showSummary: true
 ---
 
 # Elixir Nedir?
 
-Elixir, fonksiyonel, eş zamanlı (concurrent) ve dağıtık programlama (distributed programming) için tasarlanmış, dinamik ve güçlü bir programlama dilidir. Elixir, özellikle yüksek performanslı ve hata toleranslı (fault tolerance) sistemler geliştirmek için idealdir.
+Elixir, fonksiyonel, eş zamanlı (concurrent) ve dağıtık programlama (distributed programming) için tasarlanmış, dinamik ve güçlü bir programlama dilidir. Elixir, özellikle yüksek performanslı, ölçeklenebilir (scalable) ve hata toleranslı (fault tolerance) sistemler geliştirmek için idealdir.
 
 ## Temel Özellikler
 
-- **Fonksiyonel Programlama**: Elixir, fonksiyonel programlamayı destekler ve immutable veri yapıları ile çalışır. Bu, daha güvenli ve öngörülebilir kod yazmanızı sağlar.
+- **Fonksiyonel Programlama**: Elixir, fonksiyonel programlamayı destekler ve immutable (değişemeyen) veri yapıları ile çalışır. Bu, daha güvenli ve öngörülebilir kod yazmanızı sağlar.
 - **Eş Zamanlı (Concurrent) ve Dağıtık Sistemler**: Elixir, aynı anda birçok işlemi (process) verimli bir şekilde yürütebilir ve dağıtık sistemlerde mükemmel performans sergiler. Erlang VM (BEAM) üzerine inşa edildiği için bu özellikleri doğal olarak sunar.
-- **Erlang VM (BEAM)**: Elixir, Erlang sanal makinesi (BEAM) üzerinde çalışır ve bu sayede Erlang’ın sağlam ve hata toleranslı özelliklerinden yararlanır.
-- **Hata Toleransı**: Elixir, hata yönetimi konusunda güçlüdür ve sistemlerin kesintisiz çalışmasını sağlamak için **“let it crash”** felsefesini benimser. **[1] [2]**
+- **Erlang VM (BEAM)**: Elixir, Erlang sanal makinesi (BEAM) üzerinde çalışır ve bu sayede Erlang’ın sağlam ve hata toleransı özelliklerinden yararlanır.
+- **Hata Toleransı**: Elixir, hata yönetimi konusunda güçlüdür ve sistemlerin kesintisiz çalışmasını sağlamak için **“let it crash”**[^1] felsefesini benimser. [^2]
+[^1]: [Let It Crash](https://wiki.c2.com/?LetItCrash)
+[^2]: [Erlang “Let it Crash” Approach to Building Reliable Services](https://medium.com/@vamsimokari/erlang-let-it-crash-philosophy-53486d2a6da)
+
 - **Üretkenlik ve Bakım Kolaylığı**: Modern dil özellikleri ve zengin standart kütüphaneleri ile Elixir, geliştiricilerin üretkenliğini artırır ve kodun bakımını kolaylaştırır.
 
 ## Kullanım Alanları
@@ -199,8 +203,3 @@ iex> System.halt()
 **'/0'** bu fonksiyonun parametresiz halini kullanabileceğimizi göstermektedir. Parametre sayısına göre slash işaretinin yanındaki sayı değişebilir.
 
 Daha fazla özelliğe farklı bölümlerde ayrıca değineceğiz şimdilik temeller için bunları bilmek yeterli olacaktır.
-
-## Kaynaklar
-
-1. [Let It Crash](https://wiki.c2.com/?LetItCrash)
-2. [Erlang “Let it Crash” Approach to Building Reliable Services](https://medium.com/@vamsimokari/erlang-let-it-crash-philosophy-53486d2a6da)

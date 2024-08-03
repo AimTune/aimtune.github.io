@@ -19,7 +19,7 @@ paginate = 15
 rssLimit = 100
 
 enableGitInfo = false
-googleAnalytics = "G-EFPTME6X8G"
+googleAnalytics = "G-DBGMJF5XTL"
 
 [markup]
   [markup.goldmark]
@@ -47,8 +47,6 @@ googleAnalytics = "G-EFPTME6X8G"
 [taxonomies]
   category = "categories"
   tag = "tags"
-  series = "series"
-
 
 [outputFormats.Reveal]
 baseName = "index"

@@ -14,8 +14,8 @@ pageRef = "presentations"
 weight = 3
 
 [[main]]
-name = "Portfolyo"
-pageRef = "showcase"
+name = "Seriler"
+pageRef = "series"
 weight = 4
 
 [[main]]

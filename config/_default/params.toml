@@ -35,22 +35,22 @@ recentLimit = 5
 
 [article]
 showDate = true
-showDateUpdated = false
+showDateUpdated = true
 showAuthor = true
-showBreadcrumbs = false
+showBreadcrumbs = true
 showDraftLabel = true
-showEdit = false
-# editURL = "https://github.com/username/repo/"
+showEdit = true
+editURL = "https://github.com/AimTune/aimtune.github.io/tree/master/content"
 editAppendPath = true
 showHeadingAnchors = true
 showPagination = true
 invertPagination = false
 showReadingTime = true
-showTableOfContents = false
-showTaxonomies = false
-showWordCount = false
-showComments = false
-# sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "telegram", "line", "weibo"]
+showTableOfContents = true
+showTaxonomies = true
+showWordCount = true
+showComments = true
+sharingLinks = ["linkedin", "x-twitter", "facebook", "mastodon", "email", "reddit", "telegram"]
 
 [list]
 showBreadcrumbs = false

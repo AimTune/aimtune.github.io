@@ -1,7 +1,10 @@
 +++
 aliases = ["posts","articles","blog","series","docs"]
-title = "Yazılar"
+title = "Seriler"
 author = "Hamza Ağar"
 tags = ["index"]
-description = "Yazılar"
+description = "Seriler"
+groupByYear= false
+showBreadcrumbs= true
+xml= true
 +++
