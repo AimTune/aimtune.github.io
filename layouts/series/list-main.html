@@ -37,7 +37,7 @@
           {{ end }}
         {{ end }}
       {{ else }}
-        {{ range (.Paginate .Pages).Pages }}
+        {{ range sort (.Paginate .Pages).Pages "Title" "asc"}}
           {{ partial "article-link.html" . }}
         {{ end }}
       {{ end }}
