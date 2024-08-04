@@ -19,41 +19,106 @@ cascade:
   showSummary: true
 ---
 
-# Elixir Nedir?
+## Elixir Nedir?
 
-Elixir, fonksiyonel, eş zamanlı (concurrent) ve dağıtık programlama (distributed programming) için tasarlanmış, dinamik ve güçlü bir programlama dilidir. Elixir, özellikle yüksek performanslı, ölçeklenebilir (scalable) ve hata toleranslı (fault tolerance) sistemler geliştirmek için idealdir.
+Elixir, fonksiyonel, eş zamanlı (concurrent) ve dağıtık programlama (distributed programming) için tasarlanmış, dinamik ve güçlü bir programlama dilidir. Elixir, özellikle yüksek performanslı, ölçeklenebilir (scalable) ve hata toleranslı (fault tolerance) sistemler geliştirmek için idealdir.[^1] [^2]
+
+Elixir, Erlang sanal makinesi (BEAM) üzerinde çalışır ve bu sayede güçlü concurrency (eşzamanlılık) özelliklerine sahiptir. Erlang (Ericsson Language), 1980'lerde Ericsson tarafından telekomünikasyon sistemleri için geliştirildi ve BEAM sanal makinesi, bu yüksek talepli sistemlerin gereksinimlerini karşılamak için optimize edildi.
+
+## Erlang ve Elixir HelloWorld Örnekleri
+
+### Erlang
+{{< highlight erlang >}}
+-module(helloworld).
+-export([say_hello/0]).
+
+say_hello() ->
+    io:format("Hello, World!~n").
+{{< /highlight >}}
+
+### Elixir
+{{< highlight elixir >}}
+defmodule HelloWorld do
+  def say_hello do
+    IO.puts("Hello, World!")
+  end
+end
+
+HelloWorld.say_hello()
+{{< /highlight >}}
+
+{{< alert >}}
+**Not**: Elixir, aslında HelloWorld örneğinde olduğu gibi daha uzun değil, aksine daha kısa yazılabiliyor ve okunabilirlik konusunda da daha iyi.
+{{< /alert >}}
+
 
 ## Temel Özellikler
 
-- **Fonksiyonel Programlama**: Elixir, fonksiyonel programlamayı destekler ve immutable (değişemeyen) veri yapıları ile çalışır. Bu, daha güvenli ve öngörülebilir kod yazmanızı sağlar.
-- **Eş Zamanlı (Concurrent) ve Dağıtık Sistemler**: Elixir, aynı anda birçok işlemi (process) verimli bir şekilde yürütebilir ve dağıtık sistemlerde mükemmel performans sergiler. Erlang VM (BEAM) üzerine inşa edildiği için bu özellikleri doğal olarak sunar.
-- **Erlang VM (BEAM)**: Elixir, Erlang sanal makinesi (BEAM) üzerinde çalışır ve bu sayede Erlang’ın sağlam ve hata toleransı özelliklerinden yararlanır.
-- **Hata Toleransı**: Elixir, hata yönetimi konusunda güçlüdür ve sistemlerin kesintisiz çalışmasını sağlamak için **“let it crash”**[^1] felsefesini benimser. [^2]
-[^1]: [Let It Crash](https://wiki.c2.com/?LetItCrash)
-[^2]: [Erlang “Let it Crash” Approach to Building Reliable Services](https://medium.com/@vamsimokari/erlang-let-it-crash-philosophy-53486d2a6da)
+- **Fonksiyonel Programlama**: Elixir, fonksiyonel programlamayı destekler ve immutable (değişemeyen) veri yapıları ile çalışır. Bu, daha güvenli ve öngörülebilir kod yazmanızı sağlar. Örneğin aşağıda map, filter gibi fonksiyonlar zincir şeklinde birbirini pipe(|) işareti ile çağırıyolar ve her biri çıktısını bir sonraki fonksiyona girdi olarak veriyor:
 
+{{< highlight elixir >}}
+defmodule MyList do
+  def process_list(list) do
+    list
+    |> Enum.map(&(&1 + 1))
+    |> Enum.filter(&rem(&1, 2) == 0)
+    |> Enum.map(&(&1 * &1))
+    |> Enum.sum()
+  end
+end
+
+
+# Kullanım
+list = [1, 2, 3, 4, 5]
+result = MyList.process_list(list)
+IO.puts("Sonuç: #{result}")
+{{< /highlight >}}
+
+- **Eş Zamanlı (Concurrent) ve Dağıtık Sistemler**: Elixir, aynı anda birçok işlemi (process) verimli bir şekilde yürütebilir ve dağıtık sistemlerde mükemmel performans sergiler. Erlang VM (BEAM) üzerine inşa edildiği için bu özellikleri doğal olarak sunar.
+- **Erlang VM (BEAM)**: Elixir, Erlang sanal makinesi (BEAM) üzerinde çalışır ve bu sayede Erlang’ın sağlam ve hata toleransı özelliklerinden yararlanır. BEAM, hafif süreçleri (process) ve mesaj geçişini (message passing) destekleyen bir yapı sunar. Bu süreçler, işletim sistemi iş parçacıklarından çok daha hafif olup, binlerce hatta milyonlarca sürecin aynı anda çalıştırılmasını mümkün kılar. Erlang Scheduler, bu hafif süreçleri etkin bir şekilde yönetir ve her bir CPU çekirdeği için bir scheduler thread çalıştırır. Scheduler, süreçlerin adil bir şekilde çalıştırılmasını sağlar ve yüksek verimli bir yük dengeleme mekanizması sunar. Bu özellikler sayesinde, Elixir ile yazılan uygulamalar yüksek eşzamanlılık ve düşük gecikme süreleriyle mükemmel performans sergiler.
+![BEAM Processes](beam.png "Photo by [How to build fault-tolerant software systems](https://blog.mi.hdm-stuttgart.de/index.php/2019/10/13/how-to-build-fault-tolerant-software-systems/)")
 - **Üretkenlik ve Bakım Kolaylığı**: Modern dil özellikleri ve zengin standart kütüphaneleri ile Elixir, geliştiricilerin üretkenliğini artırır ve kodun bakımını kolaylaştırır.
+- **Hata Toleransı**: Elixir, hata yönetimi konusunda güçlüdür ve sistemlerin kesintisiz çalışmasını sağlamak için **“let it crash”**[^3] felsefesini benimser bu da sistemlerin hata durumlarında hızlı bir şekilde toparlanmasını sağlar. [^4]
+[^3]: [Let It Crash](https://wiki.c2.com/?LetItCrash)
+[^4]: [Erlang “Let it Crash” Approach to Building Reliable Services](https://medium.com/@vamsimokari/erlang-let-it-crash-philosophy-53486d2a6da)
+- **Ölçeklenebilirlik (Scalability)**: Elixir, yüksek ölçeklenebilirlik sunar ve aynı anda milyonlarca işlemi yönetebilir.
+- **Güvenilirlik (Reliability)**: Elixir, sağlam yapısı ve hata toleransı ile güvenilir sistemler geliştirmeyi sağlar.
+- **Dağıtık Sistemler (Distribution)**: Elixir, dağıtık sistemlerde mükemmel performans sergiler ve kolayca ölçeklendirilebilir.
+- **Hızlı Yanıt Verme (Responsiveness)**: Elixir, kullanıcılarınıza anında yanıt verebilen hızlı ve verimli sistemler oluşturmanıza imkan tanır.
+- **Canlı Güncellemeler (Live Update)**: Elixir, uygulamalarınızı kesinti olmadan güncelleyebilmenizi (deployment) sağlar.
+- **Yüksek Erişilebilirlik (High Availability)**: Elixir, yüksek erişilebilirlik gerektiren uygulamalarda mükemmel performans sunar.
+- **OTP ve GenServer**: Elixir, yüksek performanslı, dağıtık ve hata toleranslı uygulamalar geliştirmek için kullanılan OTP (Open Telecom Platform) adlı bir kütüphane ve araç seti ile birlikte gelir. OTP'nin temel yapı taşlarından biri olan GenServer, süreçlerin yaşam döngüsünü ve mesajlaşmasını yönetir. GenServer, belirli işlevleri gerçekleştirmek ve durum bilgisi tutmak için kullanılır, bu da karmaşık iş mantıklarının kolayca yönetilmesini sağlar.
+- **Hex Paket Yöneticisi ve Mix**: Hex, Elixir ve Erlang projeleri için kullanılan bir paket yöneticisidir. Hex, bağımlılıkları yönetmeyi, paylaşmayı ve Elixir kütüphanelerini kolayca yüklemeyi sağlar. Mix ise Elixir projelerini oluşturmak, derlemek, test etmek ve yönetmek için kullanılan güçlü bir araçtır. Mix, bağımlılık yönetimi, uygulama yapılandırması ve görev otomasyonu gibi işlevleri sağlar.
+- **Makrolar**: Makrolar, Elixir'de kodunuzu derleme zamanında dönüştürmenizi ve genişletmenizi sağlayan güçlü araçlardır. Makrolar, kodunuzu daha dinamik ve esnek hale getirmenizi sağlar. Elixir'de makrolar <mark>defmacro</mark> anahtar kelimesi ile tanımlanır. Örneğin aşağıdaki örnekte[^5] Ecto kütüphanesiyle .NET'teki LINQ yapısına benzer bir sorgulama makrolar sayesinde yapılabilmiş.
+
+{{< highlight elixir >}}
+# Imports only from/2 of Ecto.Query
+import Ecto.Query, only: [from: 2]
+
+# Create a query
+query = from u in "users",
+          where: u.age > 18,
+          select: u.name
+
+# Send the query to the repository
+Repo.all(query)
+{{< /highlight >}}
+
+[^5]: [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)
 
 ## Kullanım Alanları
 
-Elixir, çeşitli alanlarda kullanılabilir:
+Erlang, özellikle telekomünikasyon sektöründe yüksek erişilebilirlik ve güvenilirlik gerektiren sistemlerde uzun yıllardır kullanılmaktadır. Ericsson, WhatsApp, Facebook ve RabbitMQ gibi büyük şirketler, yüksek performanslı ve dağıtık sistemlerini yönetmek için Erlang kullanmaktadır.[^6] Ayrıca Elixir'i de PEPSICO, Discord, Change.org, Heroku gibi firmalar kullanmaktadır.[^7] Elixir de Erlang temelli olduğundan çeşitli alanlarda kullanılabilir.
+[^6]: [Who uses Erlang for product development?](https://www.erlang.org/faq/introduction#:~:text=1.5%C2%A0%20Who%20uses%20Erlang%20for%20product%20development%3F)
+[^7]: [Companies using Elixir in production](https://elixir-lang.org/cases.html)
+
+Örneğin:
 
 - **Web Geliştirme**: Phoenix framework ile birlikte kullanılarak yüksek performanslı web uygulamaları geliştirilebilir.
 - **Dağıtık Sistemler**: Yüksek erişilebilirlik ve düşük gecikme süreleri gerektiren sistemlerde idealdir.
 - **Gerçek Zamanlı Uygulamalar**: Anlık mesajlaşma, oyun sunucuları ve IoT uygulamaları gibi gerçek zamanlı sistemlerde kullanılır.
 
-## Örnek Kod
-
-Aşağıda, basit bir Elixir fonksiyonunun nasıl tanımlanacağını gösteren bir örnek bulunmaktadır:
-{{< highlight elixir >}}
-defmodule Merhaba do
-   def selam_ver do
-      IO.puts "Merhaba, Dünya!"
-   end
-end
-
-Merhaba.selam_ver()
-{{< /highlight >}}
+Elixir, Erlang'ın güçlü yönlerini modern bir sözdizimi ve geliştirme deneyimi ile birleştirerek geliştiricilere sunar. Bu nedenle, Elixir telekomünikasyon, finans, sağlık ve e-ticaret gibi sektörlerde yüksek ölçeklenebilirlik ve düşük gecikme süreleri gerektiren uygulamalar için ideal bir seçimdir.
 
 ## Elixir Kurulum Rehberi
 
@@ -98,7 +163,9 @@ sudo apt-get install erlang elixir
 
    - [Elixir İndir](https://elixir-lang.org/install.html#windows)
 
-**NOT:** Ayrıca Windows'ta Elixir'i winget, choco gibi paket yöneticileriyle de kolay bir şekilde kurabilirsiniz.
+{{< alert >}}
+**Not**: Ayrıca Windows'ta Elixir'i winget, choco gibi paket yöneticileriyle de kolay bir şekilde kurabilirsiniz.
+{{< /alert >}}
 
 ### Kurulum Sonrası Kontroller
 
@@ -191,15 +258,19 @@ iex(3)>
 
 IEx kabuğundan çıkmak için aşağıdaki yöntemleri kullanabilirsiniz:
 
-- **Ctrl + C Tuş Kombinasyonu:** İki kez Ctrl + C tuşuna basın.
+- **<kbd>CTRL</kbd>+<kbd>C</kbd> Tuş Kombinasyonu:** İki kez <kbd>CTRL</kbd>+<kbd>C</kbd> tuş kombinasyonunu uygulayın.
 
-- **System.halt/0 Fonksiyonu:**
+- **System.halt/0 Fonksiyonu**: System.halt() fonksiyonunu çalıştırın.
 
 {{< highlight elixir >}}
 iex> System.halt()
 {{< /highlight >}}
 
-**Not:**
-**'/0'** bu fonksiyonun parametresiz halini kullanabileceğimizi göstermektedir. Parametre sayısına göre slash işaretinin yanındaki sayı değişebilir.
+{{< alert >}}
+**Not**: **'/0'** bu fonksiyonun parametresiz halini kullanabileceğimizi göstermektedir. Parametre sayısına göre slash işaretinin yanındaki sayı değişebilir.
+{{< /alert >}}
 
 Daha fazla özelliğe farklı bölümlerde ayrıca değineceğiz şimdilik temeller için bunları bilmek yeterli olacaktır.
+
+[^1]: [Elixir in Action Second Edition](https://www.manning.com/books/elixir-in-action-second-edition) by [Saša Jurić](https://www.linkedin.com/in/sasajuric)
+[^2]: [ChatGPT](https://chatgpt.com/)
