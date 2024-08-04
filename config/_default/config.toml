@@ -55,6 +55,10 @@ isHTML = true
 
 [markup.highlight]
   codeFences = false
+  #style = "xcode-dark"
+  style = "onedark"
+  #style = "github-dark"
+  #style = "catppuccin-mocha"
 
 [params.reveal_hugo]
   highlight_theme = "github"

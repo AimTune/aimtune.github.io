@@ -56,7 +56,7 @@ HelloWorld.say_hello()
 
 - **Fonksiyonel Programlama**: Elixir, fonksiyonel programlamayı destekler ve immutable (değişemeyen) veri yapıları ile çalışır. Bu, daha güvenli ve öngörülebilir kod yazmanızı sağlar. Örneğin aşağıda map, filter gibi fonksiyonlar zincir şeklinde birbirini pipe(|) işareti ile çağırıyolar ve her biri çıktısını bir sonraki fonksiyona girdi olarak veriyor:
 
-{{< highlight elixir >}}
+{{< highlight elixir "linenos=table, hl_lines=3-7">}}
 defmodule MyList do
   def process_list(list) do
     list
@@ -91,7 +91,7 @@ IO.puts("Sonuç: #{result}")
 - **Hex Paket Yöneticisi ve Mix**: Hex, Elixir ve Erlang projeleri için kullanılan bir paket yöneticisidir. Hex, bağımlılıkları yönetmeyi, paylaşmayı ve Elixir kütüphanelerini kolayca yüklemeyi sağlar. Mix ise Elixir projelerini oluşturmak, derlemek, test etmek ve yönetmek için kullanılan güçlü bir araçtır. Mix, bağımlılık yönetimi, uygulama yapılandırması ve görev otomasyonu gibi işlevleri sağlar.
 - **Makrolar**: Makrolar, Elixir'de kodunuzu derleme zamanında dönüştürmenizi ve genişletmenizi sağlayan güçlü araçlardır. Makrolar, kodunuzu daha dinamik ve esnek hale getirmenizi sağlar. Elixir'de makrolar <mark>defmacro</mark> anahtar kelimesi ile tanımlanır. Örneğin aşağıdaki örnekte[^5] Ecto kütüphanesiyle .NET'teki LINQ yapısına benzer bir sorgulama makrolar sayesinde yapılabilmiş.
 
-{{< highlight elixir >}}
+{{< highlight elixir "linenos=table, hl_lines=5-7">}}
 # Imports only from/2 of Ecto.Query
 import Ecto.Query, only: [from: 2]
 
