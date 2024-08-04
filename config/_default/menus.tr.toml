@@ -9,13 +9,13 @@ pageRef = "posts"
 weight = 2
 
 [[main]]
-name = "Sunumlar"
-pageRef = "presentations"
+name = "Seriler"
+pageRef = "series"
 weight = 3
 
 [[main]]
-name = "Seriler"
-pageRef = "series"
+name = "Sunumlar"
+pageRef = "presentations"
 weight = 4
 
 [[main]]

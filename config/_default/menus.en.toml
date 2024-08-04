@@ -9,13 +9,13 @@
   weight = 2
 
 [[main]]
-  name = "Presentations"
-  pageRef = "presentations"
+  name = "Series"
+  pageRef = "series"
   weight = 3
 
 [[main]]
-  name = "Series"
-  pageRef = "series"
+  name = "Presentations"
+  pageRef = "presentations"
   weight = 4
 
 [[main]]
