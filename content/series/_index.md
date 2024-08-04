@@ -6,5 +6,5 @@ tags = ["index"]
 description = "Seriler"
 groupByYear= false
 showBreadcrumbs= true
-xml= true
+layout= "list-main"
 +++

@@ -55,11 +55,11 @@ end
 Merhaba.selam_ver()
 {{< /highlight >}}
 
-# Elixir Kurulum Rehberi
+## Elixir Kurulum Rehberi
 
 Elixir programlama dilini bilgisayarınıza kurmak için aşağıdaki adımları takip edebilirsiniz. İşletim sisteminize göre farklı kurulum yöntemleri mevcuttur.
 
-## MacOS Üzerine Elixir Kurulumu
+### MacOS Üzerine Elixir Kurulumu
 
 1. **Homebrew Paket Yöneticisini Kurun** (Eğer Homebrew yüklü değilse):
 
@@ -74,7 +74,7 @@ Elixir programlama dilini bilgisayarınıza kurmak için aşağıdaki adımları
 brew install elixir
 {{< /highlight >}}
 
-## Ubuntu/Linux Üzerine Elixir Kurulumu
+### Ubuntu/Linux Üzerine Elixir Kurulumu
 
 1. **Paket Yöneticisini Güncelleyin**:
 
@@ -88,7 +88,7 @@ sudo apt-get update
 sudo apt-get install erlang elixir
 {{< /highlight >}}
 
-## Windows Üzerine Elixir Kurulumu
+### Windows Üzerine Elixir Kurulumu
 
 1. **Erlang/OTP'yi İndirin ve Kurun**:
 
@@ -100,7 +100,7 @@ sudo apt-get install erlang elixir
 
 **NOT:** Ayrıca Windows'ta Elixir'i winget, choco gibi paket yöneticileriyle de kolay bir şekilde kurabilirsiniz.
 
-## Kurulum Sonrası Kontroller
+### Kurulum Sonrası Kontroller
 
 Elixir'in doğru bir şekilde kurulduğunu doğrulamak için terminal veya komut istemcisinde `elixir -v` komutunu çalıştırabilirsiniz. Bu komut Elixir'in kurulu olduğunu ve sürüm numarasını gösterecektir.
 
@@ -118,20 +118,20 @@ Elixir 1.12.2 (compiled with Erlang/OTP 24)
 
 Şimdi kurulumu başarılı bir şekilde yaptığımıza göre interaktif terminalini tanıyalım ve temel bilgileri öğrenmeye başlayalım.
 
-# IEx Nedir ve Nasıl Kullanılır?
+## IEx Nedir ve Nasıl Kullanılır?
 
 IEx (Interactive Elixir), Elixir kodlarını interaktif olarak çalıştırabileceğiniz bir kabuktur(shell). IEx, Elixir dilini öğrenmek ve hızlı bir şekilde kod denemeleri yapmak için ideal bir araçtır.
 
-## IEx'in Temel Özellikleri
+### IEx'in Temel Özellikleri
 
 - **Interaktif Çalışma Ortamı**: Elixir kodlarını doğrudan yazıp çalıştırabilirsiniz.
 - **Anında Geri Bildirim**: Yazdığınız kodun çıktısını hemen görebilirsiniz.
 - **Gelişmiş Yardım Sistemi**: Elixir modülleri ve fonksiyonları hakkında anında yardım alabilirsiniz.
 - **Gelişmiş Debugging ve Profiling**: Kodunuzu adım adım çalıştırabilir ve performans analizleri yapabilirsiniz.
 
-## IEx Nasıl Kullanılır?
+### IEx Nasıl Kullanılır?
 
-### IEx'i Başlatma
+#### IEx'i Başlatma
 
 IEx’i başlatmak için terminal veya komut istemcisinde `iex` komutunu yazmanız yeterlidir:
 
