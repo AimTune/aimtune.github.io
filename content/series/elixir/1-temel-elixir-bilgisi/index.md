@@ -1,8 +1,8 @@
 ---
 title: 1 - Elixir nedir? Nasıl Kurulur ve Kullanılır
 date: 2024-07-30T23:42:06+03:00
-description: Bu yazımızda Elixir dilinin temellerine, kurulumuna ve temel kullanımına değineceğiz.
-summary: Bu yazımızda Elixir dilinin temellerine, kurulumuna ve temel kullanımına değineceğiz.
+description: Bu yazımızda, Elixir programlama dilinin temel özelliklerine odaklanıyoruz. Fonksiyonel programlama yaklaşımını benimseyen Elixir, dağıtık sistemler ve yüksek performanslı uygulamalar geliştirmek için ideal bir dil olarak dikkat çekiyor. Erlang VM üzerinde çalışarak hata toleransı, ölçeklenebilirlik ve yüksek hız sunan Elixir, modern yazılım geliştirme süreçlerinde önemli bir rol üstleniyor. Yeni başlayanlar için Elixir'in temel bilgilerini ve kurulum adımlarını detaylıca ele alıyoruz.
+summary: Bu yazımızda, Elixir programlama dilinin temel özelliklerine odaklanıyoruz. Fonksiyonel programlama yaklaşımını benimseyen Elixir, dağıtık sistemler ve yüksek performanslı uygulamalar geliştirmek için ideal bir dil olarak dikkat çekiyor. Erlang VM üzerinde çalışarak hata toleransı, ölçeklenebilirlik ve yüksek hız sunan Elixir, modern yazılım geliştirme süreçlerinde önemli bir rol üstleniyor. Yeni başlayanlar için Elixir'in temel bilgilerini ve kurulum adımlarını detaylıca ele alıyoruz.
 draft: false
 hideToc: false
 enableToc: true
@@ -15,7 +15,6 @@ tags:
 categories:
   - elixir-serisi
 cascade:
-  showEdit: false
   showSummary: true
 ---
 
