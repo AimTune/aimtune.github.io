@@ -1,4 +1,4 @@
-baseURL = "https://aimtune.github.io/"
+baseURL = "https://aimtune.dev/"
 title = "Hamza Ağar Blog"
 theme = ["congo", "reveal-hugo"]
 
