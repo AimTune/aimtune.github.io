@@ -1,5 +1,5 @@
 +++
-title = "Saga Bölüm 1"
+title = "Saga Choreography"
 summary = "Bu sunumda modern mikroservis mimarileri için güçlü bir iş akışı yönetimi deseni olan Saga'yı keşfedeceğiz. Sunumda değinilecek Saga konuları: Choreography (Koreografi), Orchestration (Orkestrasyon), Compensation (Telafi İşlemleri), Error Handling (Hata Yönetimi), Transaction Management (İşlem Yönetimi)."
 date = 2024-09-03T22:53:10+03:00
 topics = ["Saga Pattern", "Mikroservisler", "Kubernetes", "Event-Driven Architecture", "Fault Tolerance", "Choreography", "Orchestration"]
