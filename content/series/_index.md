@@ -1,9 +1,9 @@
 +++
 aliases = ["posts","articles","blog","series","docs"]
-title = "Seriler"
-author = "Hamza Ağar"
+title = "Series"
+author = "Hamza Agar"
 tags = ["index"]
-description = "Seriler"
+description = "Series"
 groupByYear= false
 showBreadcrumbs= true
 layout= "list-main"

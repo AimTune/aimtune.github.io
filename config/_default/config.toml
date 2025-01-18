@@ -2,7 +2,7 @@ baseURL = "https://aimtune.dev/"
 title = "Hamza Ağar Blog"
 theme = ["congo", "reveal-hugo"]
 
-defaultContentLanguage = "tr"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = true
 
