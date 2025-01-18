@@ -1,6 +1,6 @@
 ---
 title: "Büyük Veri: Nedir, Teknolojileri"
-date: 2024-01-18T21:14:06+01:00
+date: 2025-01-18T21:14:06+01:00
 description: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz. 
 summary: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz. 
 draft: false
