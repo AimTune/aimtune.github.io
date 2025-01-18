@@ -25,7 +25,13 @@ Selamlar,
 
 Uzun zamandır üzerine araştırma yapmak istediğim ve geçmişte biraz da olsa öğrenmeye çalıştığım **Büyük Veri** konusuna olan ilgim yeniden canlandı. Bu kez, daha derinlemesine bir şekilde incelemek ve öğrendiklerimi bir yazı serisiyle paylaşmaya karar verdim. Ayrıca fırsatım olursa bu seride bir de futbol verileri üzerinde (veya başka bir veri üzerinde) basit de olsa bir büyük veri çalışması yapmak istiyorum. Bu süreçte de birçok farklı kaynaktan yararlanmaya çalışıyorum. [^1][^2][^3][^4][^5]
 
-Peki o halde başlayalım, nedir bu **Büyük Veri (Big Data)**? Günümüzün dijital dünyasında büyük veri, işletmeler ve organizasyonlar için vazgeçilmez bir kaynak haline gelmiştir. Bu serinin ilk yazısında, büyük verinin ne olduğunu, temel bileşenlerini, **Hadoop**, **Spark** ve **NoSQL** gibi teknolojilerin bu alandaki rollerini ve futbol sektöründe nasıl uygulandıklarını inceleyeceğiz.  
+Peki o halde başlayalım, nedir bu **Büyük Veri (Big Data)**? Günümüzün dijital dünyasında büyük veri, işletmeler ve organizasyonlar için vazgeçilmez bir kaynak haline gelmiştir. Bu serinin ilk yazısında, büyük verinin ne olduğunu, temel bileşenlerini, **Hadoop**, **Spark** ve **NoSQL** gibi teknolojilerin bu alandaki rollerini ve futbol sektöründe nasıl uygulandıklarını inceleyeceğiz.
+
+> Veriniz yoksa, sadece bir başka fikri olan insansınız.
+> — <cite>W. Edwards Deming</cite>
+
+> Veri, yeni petrole benzer.
+> — <cite>Clive Humby</cite>
 
 Keyifli okumalar!
 
@@ -43,7 +49,7 @@ Büyük veri, geleneksel veri işleme yöntemleriyle yönetilmesi ve analiz edil
 
 İncelediğim kaynaklarda, **5V modeli**nin özellikle ilk üç boyutu (Hacim, Çeşitlilik ve Hız) üzerinde daha fazla duruluyor. Ancak bana göre, son iki boyut olan **Doğruluk** ve **Değer**, en az ilk üçü kadar önemli.  
 
-Örneğin, elimizde yalnızca bir şirkete ait on yıllık bir veri olduğunu düşünelim. Bu veriler satış ve yatırımları içeriyor olsun. Eğer bu verilerin içinde yalnızca şirket ismi gibi doğrudan anlam ifade etmeyen bilgiler varsa, bunlar bizim için pek bir değer taşımaz; aksine, gereksiz bir hesaplama maliyeti oluşturur. Ancak, bu verilere ek olarak şirketin o yıl içerisindeki **misyonu** ve **hedefleri** gibi bilgiler de kayıt altına alınmışsa, bu veriler satışlar üzerindeki etkileri analiz etmemizi sağlar. Böylece, elde edilen veriler daha anlamlı hale gelir ve çıktılarımız daha verimli olur.  
+Örneğin, elimizde yalnızca bir şirkete ait on yıllık bir veri olduğunu düşünelim. Bu veriler satış ve yatırımları içeriyor olsun. Eğer bu verilerin içinde yalnızca şirket ismi gibi doğrudan anlam ifade etmeyen bilgiler varsa, bunlar bizim için pek bir değer taşımaz; aksine, gereksiz bir hesaplama maliyeti oluşturur. Ancak, bu verilere ek olarak şirketin o yıl içerisindeki **misyonu** ve **hedefleri** gibi bilgiler de kayıt altına alınmışsa, bu veriler satışlar üzerindeki etkileri analiz etmemizi sağlar. Böylece, elde edilen veriler daha anlamlı hale gelir ve çıktılarımız daha verimli olur.
 
 Bu nedenle, verilerimizin yalnızca hacmi ve çeşitliliği değil, aynı zamanda **doğruluğu** ve sunduğu **değer** de büyük veri analizinde kritik öneme sahiptir.
 
@@ -104,7 +110,7 @@ Büyük Veri uzmanları, veri analitiği, makine öğrenimi ve yapay zeka gibi a
 
 Futbol kulüpleri de büyük veri mühendislerine ihtiyaç duymaktadır. Örneğin, Manchester United ve Liverpool gibi dev futbol kulüpleri, veri mühendisliği alanında uzmanlaşmış profesyoneller aramaktadır. Bu tür pozisyonlar, spor endüstrisinde veri biliminin önemini ve büyüklüğünü göstermektedir. [^9]
 
-![Manchester United Job Post](manchester-united-job-post.png)
+![Manchester United Job Post](/images/series/big-data/manu-job-post.png "LinkedIn'de Daha Önceden Paylaşılmış Bir İş İlanı")
 
 [^1]: [Udemy - Yeni Başlayanlar için Big Data: NoSQL & Spark & Hadoop](https://www.udemy.com/course/big-data-hadoop-spark-nosql-egitimi)
 [^2]: [Udemy - Sıfırdan Her Yönüyle Big Data ( Büyük Veri ) Eğitimi](https://www.udemy.com/course/sifirdan-her-yonuyle-bigdata)
