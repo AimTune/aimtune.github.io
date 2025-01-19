@@ -108,7 +108,7 @@ Türkiye'de de büyük veri alanında uzmanlaşmış profesyonellere yönelik i�
 
 Büyük Veri uzmanları, veri analitiği, makine öğrenimi ve yapay zeka gibi alanlarda derinlemesine bilgi ve deneyime sahip olmalıdır. Bu uzmanlık, onlara yüksek maaşlar ve hızlı kariyer ilerlemesi gibi avantajlar sunmaktadır.
 
-Futbol kulüpleri de büyük veri mühendislerine ihtiyaç duymaktadır. Örneğin, Manchester United ve Liverpool gibi dev futbol kulüpleri, veri mühendisliği alanında uzmanlaşmış profesyoneller aramaktadır. Bu tür pozisyonlar, spor endüstrisinde veri biliminin önemini ve büyüklüğünü göstermektedir. [^9]
+Futbol kulüpleri de büyük veri mühendislerine ihtiyaç duymaktadır. Örneğin, Manchester United ve Liverpool gibi dev futbol kulüpleri, veri mühendisliği alanında uzmanlaşmış profesyoneller aramaktadır. Bu tür pozisyonlar, spor endüstrisinde veri biliminin önemini ve büyüklüğünü göstermektedir. [^9][^10]
 
 ![Manchester United Job Post](/images/series/big-data/manu-job-post.png "LinkedIn'de Daha Önceden Paylaşılmış Bir İş İlanı")
 
@@ -121,3 +121,4 @@ Futbol kulüpleri de büyük veri mühendislerine ihtiyaç duymaktadır. Örneğ
 [^7]: Apache Software Foundation. *Apache Spark Documentation*. [https://spark.apache.org](https://spark.apache.org)  
 [^8]: MongoDB, Inc. *MongoDB Official Website*. [https://www.mongodb.com](https://www.mongodb.com)  
 [^9]: Lead Data Scientist [Liverpool Careers](https://careers.liverpoolfc.com/members/modules/job/detail.php?record=826)
+[^10]: [YouTube - Erden Timur tv100 Canlı Yayın](https://www.youtube.com/watch?v=G9sbnfe8_k8)
