@@ -6,7 +6,7 @@ tags: ["NoSQL", "ACID", "BASE", "CAP Teoremi", "Büyük Veri"]
 categories: ["Veritabanları", "Teknoloji"]
 ---
 
-NoSQL veritabanları, günümüzün büyük veri ve modern uygulama ihtiyaçlarını karşılamak için geleneksel ilişkisel veritabanlarından farklı bir yaklaşım sunar. Bu yazımızda, **SQL ve NoSQL** veritabanları arasındaki temel farklara, **ACID** ve **BASE** modelleri arasındaki ayrımlara, **CAP Teoremi**'nin büyük veri dünyasındaki önemine ve NoSQL'in sunduğu esnek mimariye odaklanacağız. Ayrıca, farklı NoSQL veritabanı türlerini (doküman, anahtar-değer, sütunlu ve graf veritabanları gibi) örneklerle inceleyeceğiz.[^1][^2][^3][^4][^5]
+NoSQL veritabanları, günümüzün büyük veri ve modern uygulama ihtiyaçlarını karşılamak için geleneksel ilişkisel veritabanlarından farklı bir yaklaşım sunar. Bu yazımızda, **SQL ve NoSQL** veritabanları arasındaki temel farklara, **ACID** ve **BASE** modelleri arasındaki ayrımlara, **CAP Teoremi**'nin büyük veri dünyasındaki önemine ve NoSQL'in sunduğu esnek mimariye odaklanacağız. Ayrıca, farklı NoSQL veritabanı türlerini (doküman, anahtar-değer, sütunlu ve graf veritabanları gibi) örneklerle inceleyeceğiz.[^1][^2][^3][^4]
 
 SQL veritabanları, özellikle veritabanı tutarlılığı ve karmaşık sorgular için güçlü bir yapı sunarken, NoSQL veritabanları daha esnek ve yatay ölçeklenebilir çözümler sunar. Bu yazıda, her iki yaklaşımın avantajlarını ve kullanım alanlarını karşılaştırarak, farklı veri gereksinimlerine nasıl hitap ettiklerini ele alacağız.
 
