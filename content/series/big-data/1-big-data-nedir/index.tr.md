@@ -1,8 +1,8 @@
 ---
 title: "Büyük Veri: Nedir, Teknolojileri"
 date: 2025-01-18T21:14:06+01:00
-description: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz. 
-summary: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz. 
+description: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz.
+summary: Bu yazımızda, Büyük Veri (Big Data) kavramını, temel bileşenlerini ve teknolojilerini ele alıyoruz. Hadoop, Spark ve NoSQL gibi araçların bu alandaki rolünü açıklayarak, futbol sektörü gibi örneklerle kullanım alanlarına değiniyoruz.
 draft: false
 hideToc: false
 enableToc: true
@@ -21,7 +21,7 @@ cascade:
   showSummary: true
 ---
 
-Selamlar,  
+Selamlar,
 
 Uzun zamandır üzerine araştırma yapmak istediğim ve geçmişte biraz da olsa öğrenmeye çalıştığım **Büyük Veri** konusuna olan ilgim yeniden canlandı. Bu kez, daha derinlemesine bir şekilde incelemek ve öğrendiklerimi bir yazı serisiyle paylaşmaya karar verdim. Ayrıca fırsatım olursa bu seride bir de futbol verileri üzerinde (veya başka bir veri üzerinde) basit de olsa bir büyük veri çalışması yapmak istiyorum. Bu süreçte de birçok farklı kaynaktan yararlanmaya çalışıyorum. [^1][^2][^3][^4][^5]
 
@@ -47,7 +47,7 @@ Büyük veri, geleneksel veri işleme yöntemleriyle yönetilmesi ve analiz edil
 
 ### Kişisel yorumum
 
-İncelediğim kaynaklarda, **5V modeli**nin özellikle ilk üç boyutu (Hacim, Çeşitlilik ve Hız) üzerinde daha fazla duruluyor. Ancak bana göre, son iki boyut olan **Doğruluk** ve **Değer**, en az ilk üçü kadar önemli.  
+İncelediğim kaynaklarda, **5V modeli**nin özellikle ilk üç boyutu (Hacim, Çeşitlilik ve Hız) üzerinde daha fazla duruluyor. Ancak bana göre, son iki boyut olan **Doğruluk** ve **Değer**, en az ilk üçü kadar önemli.
 
 Örneğin, elimizde yalnızca bir şirkete ait on yıllık bir veri olduğunu düşünelim. Bu veriler satış ve yatırımları içeriyor olsun. Eğer bu verilerin içinde yalnızca şirket ismi gibi doğrudan anlam ifade etmeyen bilgiler varsa, bunlar bizim için pek bir değer taşımaz; aksine, gereksiz bir hesaplama maliyeti oluşturur. Ancak, bu verilere ek olarak şirketin o yıl içerisindeki **misyonu** ve **hedefleri** gibi bilgiler de kayıt altına alınmışsa, bu veriler satışlar üzerindeki etkileri analiz etmemizi sağlar. Böylece, elde edilen veriler daha anlamlı hale gelir ve çıktılarımız daha verimli olur.
 
@@ -112,13 +112,21 @@ Futbol kulüpleri de büyük veri mühendislerine ihtiyaç duymaktadır. Örneğ
 
 ![Manchester United Job Post](/images/series/big-data/manu-job-post.png "LinkedIn'de Daha Önceden Paylaşılmış Bir İş İlanı")
 
+---
+
+## Sonuç
+
+Bu yazıda Büyük Veri kavramının temellerini ve ilgili teknolojilere dair genel bir giriş yaptım. Bir sonraki yazımda, SQL-NoSQL veritabanlarının temellerine, BASE ve ACID modelleri arasındaki farklara, CAP Teoremi'ne, büyük veriyle ilişkisine ve NoSQL veritabanı türlerine odaklanacağım.
+
+Bir sonraki yazıda görüşmek üzere! :smiling_face_with_smiling_eyes:
+
 [^1]: [Udemy - Yeni Başlayanlar için Big Data: NoSQL & Spark & Hadoop](https://www.udemy.com/course/big-data-hadoop-spark-nosql-egitimi)
 [^2]: [Udemy - Sıfırdan Her Yönüyle Big Data ( Büyük Veri ) Eğitimi](https://www.udemy.com/course/sifirdan-her-yonuyle-bigdata)
 [^3]: [Udemy - (50 Saat) Python A-Z™: Veri Bilimi ve Machine Learning](https://www.udemy.com/course/python-egitimi)
 [^4]: [Udemy - Software Architecture & Technology of Large-Scale Systems](https://www.udemy.com/course/developer-to-architect)
 [^5]: [ChatGPT](https://chatgpt.com)
-[^6]: Apache Software Foundation. *Apache Hadoop Documentation*. [https://hadoop.apache.org](https://hadoop.apache.org)  
-[^7]: Apache Software Foundation. *Apache Spark Documentation*. [https://spark.apache.org](https://spark.apache.org)  
-[^8]: MongoDB, Inc. *MongoDB Official Website*. [https://www.mongodb.com](https://www.mongodb.com)  
+[^6]: Apache Software Foundation. *Apache Hadoop Documentation*. [https://hadoop.apache.org](https://hadoop.apache.org)
+[^7]: Apache Software Foundation. *Apache Spark Documentation*. [https://spark.apache.org](https://spark.apache.org)
+[^8]: MongoDB, Inc. *MongoDB Official Website*. [https://www.mongodb.com](https://www.mongodb.com)
 [^9]: Lead Data Scientist [Liverpool Careers](https://careers.liverpoolfc.com/members/modules/job/detail.php?record=826)
 [^10]: [YouTube - Erden Timur tv100 Canlı Yayın](https://www.youtube.com/watch?v=G9sbnfe8_k8)
