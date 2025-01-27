@@ -6,6 +6,14 @@ tags: ["NoSQL", "ACID", "BASE", "CAP Teoremi", "Büyük Veri"]
 categories: ["Veritabanları", "Teknoloji"]
 ---
 
+NoSQL veritabanları, günümüzün büyük veri ve modern uygulama ihtiyaçlarını karşılamak için geleneksel ilişkisel veritabanlarından farklı bir yaklaşım sunar. Bu yazımızda, **SQL ve NoSQL** veritabanları arasındaki temel farklara, **ACID** ve **BASE** modelleri arasındaki ayrımlara, **CAP Teoremi**'nin büyük veri dünyasındaki önemine ve NoSQL'in sunduğu esnek mimariye odaklanacağız. Ayrıca, farklı NoSQL veritabanı türlerini (doküman, anahtar-değer, sütunlu ve graf veritabanları gibi) örneklerle inceleyeceğiz.[^1][^2][^3][^4][^5]
+
+SQL veritabanları, özellikle veritabanı tutarlılığı ve karmaşık sorgular için güçlü bir yapı sunarken, NoSQL veritabanları daha esnek ve yatay ölçeklenebilir çözümler sunar. Bu yazıda, her iki yaklaşımın avantajlarını ve kullanım alanlarını karşılaştırarak, farklı veri gereksinimlerine nasıl hitap ettiklerini ele alacağız.
+
+---
+
+Böyle daha kapsamlı oldu! Uygun mudur?
+
 ## CAP Teoremi Nedir?
 
 CAP Teoremi, Eric Brewer tarafından ortaya atılmış bir teoridir ve dağıtık sistemlerin üç temel özelliği aynı anda sağlayamayacağını ifade eder. Bu özellikler şunlardır:
@@ -109,14 +117,19 @@ Büyük veri, verinin hacmi, çeşitliliği ve hızı (3V: Volume, Variety, Velo
 - **Kullanım Alanları:** Sosyal ağlar, öneri sistemleri.
 - **Örnekler:** Neo4j.
 
-### 4. **Geniş Sütunlu Veritabanları**
+### 4. **Arama ve Analitik Veritabanları**
+- **Özellikleri:** Veriler, tam metin arama, analiz ve filtreleme için optimize edilir. Elasticsearch, dağıtık bir altyapıda ölçeklenebilir sorgular sunar. JSON formatında veri saklar ve hızlı arama için ters indeksleme kullanır.
+- **Kullanım Alanları:** Log analitiği, metin analitiği, öneri sistemleri, büyük veri ile gerçek zamanlı analiz.
+- **Örnekler:** Elasticsearch, Apache Solr.
+
+### 5. **Geniş Sütunlu Veritabanları**
 - **Özellikleri:** Veriler sütun bazlı olarak organize edilir. Büyük veri analitiği için optimize edilmiştir.
 - **Kullanım Alanları:** IoT verileri, log analitiği, büyük veri analitiği.
 - **Örnekler:** Apache Cassandra, HBase (Hadoop ile birlikte çalışır).
 
 HBase, **Apache Hadoop** ekosisteminin bir parçası olup, büyük ölçekli veri kümelerini işlemeye olanak sağlar. HDFS ile birlikte çalışarak verilerin dağıtık bir şekilde saklanmasını ve sorgulanmasını sağlar. Özellikle büyük veri analitiği ve gerçek zamanlı uygulamalar için ideal bir çözüm sunar.
 
-### 5. **Zaman Serisi Veritabanları**
+### 6. **Zaman Serisi Veritabanları**
 - **Özellikleri:** Zaman damgasıyla ilişkili veriler için özelleşmiştir.
 - **Kullanım Alanları:** Sensör verileri, IoT.
 - **Örnekler:** InfluxDB, TimescaleDB.
@@ -138,3 +151,8 @@ HBase, **Apache Hadoop** ekosisteminin bir parçası olup, büyük ölçekli ver
 NoSQL veritabanları, modern uygulamaların gereksinimlerini karşılamak adına esneklik ve ölçeklenebilirlik sunar. Büyük veri işleme, IoT ve gerçek zamanlı uygulamalar gibi alanlarda sağladığı avantajlar ise bu teknolojiyi öne çıkarır. Ancak bir veritabanı seçmeden önce, BASE ve ACID modelleri arasındaki farkları anlamak ve uygulamanın ihtiyaçlarını doğru şekilde analiz etmek kritik öneme sahiptir.
 
 Bu yazıda, NoSQL sistemlerinin temel kavramlarına odaklandık. Gelecek yazılarımızda ise **Apache Hadoop**, **Spark**, ve **Kafka** gibi veri akışının yoğun olduğu sistemlerde izlenmesi gereken yolları detaylıca ele alacağız. Bir sonraki yazıda görüşmek üzere! :smiling_face_with_smiling_eyes:
+
+[^1]: [What’s the Difference Between an ACID and a BASE Database?](https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/)
+[^2]: [ACID Model vs BASE Model For Database](https://www.geeksforgeeks.org/acid-model-vs-base-model-for-database/)
+[^3]: [Udemy - Software Architecture & Technology of Large-Scale Systems](https://www.udemy.com/course/developer-to-architect)
+[^4]: [ChatGPT](https://chatgpt.com)
