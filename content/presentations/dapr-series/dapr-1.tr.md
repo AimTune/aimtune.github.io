@@ -5,10 +5,6 @@ date = 2024-07-28T22:53:10+03:00
 topics = ["Dapr", "Mikroservisler", "Kubernetes", "Redis", "JavaScript", "Node.js", "Sidecar Pattern", "Cross Cutting Concerns"]
 layout = "list"
 outputs = ["Reveal"]
-[reveal_hugo]
-theme = "night"
-margin = 0.2
-
 +++
 
 {{% section %}}

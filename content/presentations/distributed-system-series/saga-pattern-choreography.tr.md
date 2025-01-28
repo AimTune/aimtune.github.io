@@ -14,7 +14,7 @@ margin = 0.2
 
 ## Saga Pattern
 <br>
-(Bağımsız ve Hata Toleranslı İş Akışı Yönetimi) 
+(Bağımsız ve Hata Toleranslı İş Akışı Yönetimi)
 <br>
 <img src="/images/slides/saga/saga-cover.webp" height="300" style="border: none;background-color: transparent;"/>
 
@@ -112,7 +112,7 @@ Dağıtık işlemler, Saga Pattern ile adımlara bölünerek yönetilir. Her bir
 
 ---
 
-{{< slide template="hamzadark1" >}} 
+{{< slide template="hamzadark1" >}}
 
 ## Choreography Yapısının Özellikleri
 

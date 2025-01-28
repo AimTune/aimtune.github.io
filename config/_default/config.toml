@@ -61,7 +61,16 @@ isHTML = true
   #style = "catppuccin-mocha"
 
 [params.reveal_hugo]
-  highlight_theme = "github"
+theme = "night"
+history = true
+slide_number = true
+controlsBackArrows = 'faded'
+progress = true
+showNotes = true
+hideInactiveCursor = true
+hideCursorTime = 2000
+highlight_theme = "vs2015"
+margin = 0.2
 [params.reveal_hugo.templates.hamza1]
 background = "#000002"
 transition = "convex"
@@ -90,3 +99,33 @@ background = "#736494"
 background = "#c099de"
 [params.reveal_hugo.templates.hamzadark5]
 background = "#f8cbed"
+[params.reveal_hugo.templates.darkslide1]
+background = "#000000"  # Saf Siyah
+[params.reveal_hugo.templates.darkslide2]
+background = "#0a0a0f"  # Neredeyse Siyah (Hafif Gri-Mor Alt Ton)
+[params.reveal_hugo.templates.darkslide3]
+background = "#12121c"  # Çok Koyu Gri-Mor
+[params.reveal_hugo.templates.darkslide4]
+background = "#1a1a28"  # Siyaha Yakın Duman Moru
+[params.reveal_hugo.templates.darkslide5]
+background = "#222236"  # Derin Kömür Moru
+[params.reveal_hugo.templates.darkslide6]
+background = "#2c2944"  # Füme Erik Tonu
+[params.reveal_hugo.templates.darkslide7]
+background = "#383354"  # Koyu Lavanta
+[params.reveal_hugo.templates.darkslide8]
+background = "#453c65"  # Derin Menekşe
+[params.reveal_hugo.templates.darkslide9]
+background = "#524576"  # Koyu Eflatun
+[params.reveal_hugo.templates.darkslide10]
+background = "#64538e"  # Yumuşayan Lavanta Moru
+[params.reveal_hugo.templates.darkslide11]
+background = "#79689f"  # Hafif Lavanta
+[params.reveal_hugo.templates.darkslide12]
+background = "#907eb5"  # Pastel Lila
+[params.reveal_hugo.templates.darkslide13]
+background = "#a78dbf"  # Açık Lavanta Tonu
+[params.reveal_hugo.templates.darkslide14]
+background = "#c4a9db"  # Açık Leylak
+[params.reveal_hugo.templates.darkslide15]
+background = "#e6c8ef"  # Parlak Pastel Pembe
