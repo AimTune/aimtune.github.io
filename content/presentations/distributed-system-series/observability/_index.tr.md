@@ -22,7 +22,18 @@ weight=1
 
 ---
 
-{{< slide template="darkslide2" >}}
+{{< slide template="darkslide3" >}}
+
+> All truths are easy to understand once they are discovered; the point is to <mark>discover</mark> them.
+> — <cite>**Galileo Galilei**</cite>
+
+{{% note %}}
+Bütün hakikatler keşfedilince kolayca anlaşılır; önemli olan onları keşfetmektir.
+{{% /note %}}
+
+---
+
+{{< slide template="darkslide3" >}}
 
 - **Tanım**: Observability, uygulamaların canlı ortamda bile iç durumlarını dışa vuran veriler üreterek izlenebilmesini sağlayan bir yaklaşımdır. Aynı zamanda bir sistemin iç durumunu dış gözlemlerle anlama yeteneğini ifade eder ve dağıtık sistemlerde sistemin performansını izlemek ve hataları tespit etmek için kullanılır.
 
