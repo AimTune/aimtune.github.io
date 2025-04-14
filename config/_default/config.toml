@@ -15,7 +15,8 @@ buildFuture = true
 #copyright = "{year}, CC Licences. (Kaynak belirterek paylaşabilirsiniz)"
 timeout = 10000
 enableEmoji = true
-paginate = 15
+[pagination]
+  pagerSize = 15
 rssLimit = 100
 
 enableGitInfo = false
