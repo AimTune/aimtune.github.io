@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+      "vw-mcp": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "supergateway",
+          "--sse",
+          "http://localhost:5678/mcp/vw-mcp/sse"
+        ]
+      }
+    }
+  }
