@@ -1,0 +1,229 @@
+{
+  "name": "Chatbot Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -420,
+        -260
+      ],
+      "id": "934bf5d1-d480-4ed8-add1-e4047e8a0933",
+      "name": "When chat message received",
+      "webhookId": "0d86fd53-e771-4ffc-8f48-5e7f936f2871"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json?.chatInput ?? $json?.body?.question }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -168,
+        -160
+      ],
+      "id": "3265c753-ca22-48f3-98c0-b8f5be9d8bbc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        60
+      ],
+      "id": "efed4a37-793c-4597-ace5-0602d8dc91c8",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "2T9YdIKQBX2X1lBi",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json?.sessionId ?? $('Webhook')?.item?.json?.body?.sessionId ?? \"\" }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        60
+      ],
+      "id": "5bc5d373-e45d-4f05-8426-f1d66be617a1",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "http://127.0.0.1:5678/mcp/vw-mcp/sse"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        40,
+        60
+      ],
+      "id": "db29a4f7-9c76-459b-a874-b5c0201ae517",
+      "name": "MCP Client"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vw-chat",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -420,
+        -60
+      ],
+      "id": "4afaa908-da53-4152-9499-e7220512a3c2",
+      "name": "Webhook",
+      "webhookId": "031a448e-2d60-4ab4-9f7b-6119ea3aa93e"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"answer\": \"{{ $json.output }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        -60
+      ],
+      "id": "4b1d444a-e6ad-4e32-a45f-d6ab9287e9c6",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "queue": "denemequeue",
+        "sendInputData": false,
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        -260
+      ],
+      "id": "2fc18012-5cb7-4261-bc7c-a55710f36cf2",
+      "name": "RabbitMQ",
+      "credentials": {
+        "rabbitmq": {
+          "id": "l9qxvifVm6XpPOJ1",
+          "name": "RabbitMQ account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RabbitMQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4a91934d-4b0c-4d81-aa9c-5f8f462be2f3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a22d728a246d5cb6ffe588229268d745131c24ce9460d6cf4d5b04c742a35072"
+  },
+  "id": "rvmFhjUTR1nz92Zk",
+  "tags": []
+}

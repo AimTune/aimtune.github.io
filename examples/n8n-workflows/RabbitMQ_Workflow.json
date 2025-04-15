@@ -1,0 +1,154 @@
+{
+  "name": "RabbitMQ Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "denemequeue",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        0
+      ],
+      "id": "222a5df4-0472-4ed2-8439-426bfc5f0533",
+      "name": "RabbitMQ Trigger",
+      "credentials": {
+        "rabbitmq": {
+          "id": "l9qxvifVm6XpPOJ1",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/home/tempdata/{{ $workflow.id }}.txt",
+        "options": {
+          "append": true
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        640,
+        0
+      ],
+      "id": "9dec6c9a-f3d3-46fd-ae4f-470734d5feab",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "queue": "denemequeue",
+        "sendInputData": false,
+        "message": "denememesaj3",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        -20,
+        260
+      ],
+      "id": "bfd53da0-0edf-4c46-b4e7-e13ffec8710c",
+      "name": "RabbitMQ",
+      "credentials": {
+        "rabbitmq": {
+          "id": "l9qxvifVm6XpPOJ1",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        420,
+        0
+      ],
+      "id": "4a18ec39-f582-49dc-a063-1c92e3f69818",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "74c7724d-8ea4-47c8-8751-d2a9cb2d7ffd",
+              "name": "data",
+              "value": "={{($('RabbitMQ Trigger').item.json.content+'\\n').base64Encode()}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        200,
+        0
+      ],
+      "id": "9e467afa-f7c5-4acc-8346-99f05ceed959",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "RabbitMQ Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        []
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "343b4454-8d2c-4649-b663-e728f4af8864",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a22d728a246d5cb6ffe588229268d745131c24ce9460d6cf4d5b04c742a35072"
+  },
+  "id": "tYM6d2RPfR3BATA8",
+  "tags": []
+}

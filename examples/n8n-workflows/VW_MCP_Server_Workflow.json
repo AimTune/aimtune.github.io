@@ -1,0 +1,88 @@
+{
+  "name": "VW MCP Server Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "vw-mcp"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -140
+      ],
+      "id": "0fc0e37e-343c-4b10-b915-219bf9fc3e6e",
+      "name": "MCP Server Trigger",
+      "webhookId": "ec98537d-af4b-4033-9be1-3070be3806c6"
+    },
+    {
+      "parameters": {
+        "name": "servis_randevu",
+        "description": "Bu araç, Volkswagen için servis randevusu alma işlemini gerçekleştirir. Parametre olarak plaka numarası (örneğin: 35 TEST 34) ve istenilen tarih (GG-AA-YYYY formatında) girilir. İşlem sonucunda, randevunun başarıyla alınıp alınmadığını belirten bir mesaj değeri döner.",
+        "jsCode": "if(query?.[\"plate\"] == \"35 TEST 34\") {\n\n  return `${query?.[\"plate\"]} plakasına ${query?.[\"date\"]} tarihi için kayıt alınmıştır.`\n}\nreturn `${query?.[\"plate\"]} plakasına ${query?.[\"date\"]} tarihi için kayıt denendi ancak hata alındı.`",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n\t\"plate\": \"35 ASD 35\",\n\t\"date\": \"12-05-2025\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        -452,
+        80
+      ],
+      "id": "59de52e7-bf5a-43bb-9f1d-88fb27fa75cb",
+      "name": "Servis Randevu Alma"
+    },
+    {
+      "parameters": {
+        "name": "test_surusu",
+        "description": "Bu araç, Volkswagen için test sürüşü randevusu alma işlemini gerçekleştirir. Parametre olarak fullName (baş harfleri büyük olacak şekilde, örneğin: Hamza Ağar) ve istenilen tarih (GG-AA-YYYY formatında) girilir. İşlem sonucunda, randevunun başarıyla alınıp alınmadığını belirten bir boolean değer döner.",
+        "jsCode": "const monthYear = query?.[\"date\"]?.split(\"-\").slice(1).join(\"-\");\n\nif (monthYear === \"05-2025\") {\n  return `${query?.[\"fullName\"]} adına ${query?.[\"date\"]} tarihi için test sürüşü randevusu alınamadı. (Mayıs 2025 için randevu verilemiyor.)`;\n}\n\nreturn `${query?.[\"fullName\"]} adına ${query?.[\"date\"]} tarihi için test sürüşü randevusu alınmıştır.`;\n",
+        "specifyInputSchema": true,
+        "jsonSchemaExample": "{\n\t\"fullName\": \"Hamza Ağar\",\n\t\"date\": \"12-05-2025\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        -332,
+        80
+      ],
+      "id": "7c84b861-9e4f-4a37-b446-f53606f31df0",
+      "name": "Test Sürüşü"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Servis Randevu Alma": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Sürüşü": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bea8a732-cc9c-4ee0-8613-331a7c55071e",
+  "meta": {
+    "instanceId": "a22d728a246d5cb6ffe588229268d745131c24ce9460d6cf4d5b04c742a35072"
+  },
+  "id": "xorxBvkh48lH7k5P",
+  "tags": []
+}
