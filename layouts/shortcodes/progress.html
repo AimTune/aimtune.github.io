@@ -1,0 +1,42 @@
+{{ $title := .Get "title" }}
+{{ $percentage := .Get "percentage" }}
+
+<div class="progress-container">
+  <div class="progress-title">{{ $title }}</div>
+  <div class="progress-bar">
+    <div class="progress-bar-fill" style="width: {{ $percentage }}%"></div>
+  </div>
+  <div class="progress-percentage">{{ $percentage }}%</div>
+</div>
+
+<style>
+.progress-container {
+  margin: 1rem 0;
+}
+
+.progress-title {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-percentage {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+</style> 

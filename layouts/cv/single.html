@@ -1,0 +1,248 @@
+{{ define "main" }}
+<style>
+  @media print {
+    @page {
+      margin: 1.5cm;
+    }
+    
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Times New Roman, serif;
+      font-size: 12pt;
+      line-height: 1.15;
+      color: #000;
+      background: #fff;
+    }
+
+    .no-print, img, .profile-image, .social-links, .greeting-text, 
+    .dark-mode-toggle, button, .shadow, .rounded {
+      display: none !important;
+    }
+
+
+    p, ul, li {
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.4;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+</style>
+
+<div class="container max-w-5xl mx-auto px-4 py-8">
+  <!-- Print Header -->
+  <div class="cv-header mb-1 text-center hidden print:block">
+    <h1 style="font-weight: bold;">{{ .Params.name }} {{ .Params.surname }}</h1>
+    <p class="contact-info"><a href="mailto:{{ .Params.email }}" style="margin-right: 2px;">{{ .Params.email }}</a>  •  <a href="tel:{{ .Params.phone }}" style="margin-right: 2px; margin-left: 2px;">{{ .Params.phone }}</a>  •  <a href="https://{{ .Params.website }}" style="margin-right: 2px; margin-left: 2px;">{{ .Params.website }}</a></p>
+    <p class="title mt-1">{{ .Params.profileSubtitle }}</p>
+  </div>
+
+  <!-- Normal Header (will be hidden in print) -->
+  <div class="no-print flex flex-col md:flex-row items-center md:items-start mb-12 print:hidden print:mt-0 print:mb-0">
+    <!-- Profile Image -->
+    <div class="md:mr-8 mb-6 md:mb-0">
+      <img src="{{ .Params.profileImage }}" alt="Profile Photo" class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover">
+    </div>
+    
+    <!-- Name and Description -->
+    <div class="text-center md:text-left">
+      <h1 class="greeting-text text-4xl font-bold mb-1">{{ .Site.Params.greeting }} {{ .Site.Params.author.only_name }} 👋</h1>
+      <h1 class="fullname-text hidden print:block">{{ .Site.Params.author.only_name }} {{ .Site.Params.author.surname }}</h1>
+      <p class="text-xl text-gray-600 mb-4 max-w-2xl title">{{ .Site.Params.profile_subtitle }}</p>
+      
+      <!-- Personal Information -->
+      <div class="contact mb-4">
+        {{ with .Params.email }}<p>📧 {{ . }}</p>{{ end }}
+        {{ with .Params.phone }}<p>📱 {{ . }}</p>{{ end }}
+        {{ with .Params.github }}<p>🔗 {{ . }}</p>{{ end }}
+        {{ with .Params.linkedin }}<p>💼 {{ . }}</p>{{ end }}
+      </div>
+      
+      <!-- Social Links -->
+      <div class="flex justify-center md:justify-start space-x-4">
+        {{ range .Params.profileSocial }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500">
+            <i class="fab fa-{{ .name }} fa-lg"></i>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="print:mt-2 print:ml-2 print:mr-2">
+    <h1 class="print:text-xl text-2xl font-bold print:mt-1 mt-2 print:mb-2 mb-4">{{ .Site.Params.about }}</h1>
+    <div class="prose max-w-none print:mr-4">
+      {{ range .Params.about }}
+        {{ .text | markdownify }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="print:mt-2 print:ml-2 print:mr-2 mb-12 print:mb-0">
+    <h1 class="print:text-xl text-2xl font-bold print:mt-1 mt-2 print:mb-2 mb-4">{{ .Site.Params.work_experience }}</h1>
+    <div class="space-y-8 print:space-y-0">
+      {{ range .Params.work }}
+        <div class="flex flex-col space-y-2">
+          <div class="flex items-start">
+            <div class="w-12 h-12 mr-4 flex-shrink-0 print:hidden">
+              <img src="{{ .logo }}" alt="{{ .company }} logo" class="w-full h-full rounded-full object-contain print:hidden">
+            </div>
+            <div class="flex-grow">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                <div>
+                  <h3 class="font-bold text-lg">{{ .company }}</h3>
+                  <div class="text-gray-600">{{ .title }}</div>
+                </div>
+                <div class="text-gray-500 text-sm mt-1 md:mt-0 print:mr-4">{{ .date }}</div>
+              </div>
+            </div>
+          </div>
+          {{ if .description }}
+          <div class="pl-16 print:pl-0 print:mr-4">
+            <div class="text-gray-700 text-sm">
+              {{ $paragraphs := split .description "\n" }}
+              {{ range $paragraphs }}
+                {{ if ne . "" }}
+                <p class="mb-1">{{ . }}</p>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  {{ if .Params.education }}
+  <section class="mb-12 print:mb-0 print:ml-2 print:mr-2">
+    <h1 class="print:text-xl text-2xl font-bold print:mt-0 mt-2 print:mb-2 mb-4">{{ .Site.Params.education }}</h1>
+    <div class="space-y-4">
+      {{ range .Params.education }}
+        <div class="flex items-center">
+          <div class="flex-shrink-0 mr-4 print:hidden">
+            <div class="w-14 h-14 flex items-center justify-center bg-white rounded-full shadow-sm overflow-hidden">
+              <img src="{{ .logo }}" alt="{{ .school }} logo" class="max-w-full max-h-full p-1">
+            </div>
+          </div>
+          <div class="flex-grow">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+              <div>
+                <h3 class="font-bold text-lg">{{ .school }}</h3>
+                <div class="text-gray-600">{{ .degree }}</div>
+              </div>
+              <div class="text-gray-500 text-sm mt-1 md:mt-0 print:mr-4">{{ .date }}</div>
+            </div>
+          </div>
+        </div>
+        {{ if .description }}
+          <div class="pl-16 print:pl-0 print:mr-4">
+            <div class="text-gray-700 text-sm">
+              {{ $paragraphs := split .description "\n" }}
+              {{ range $paragraphs }}
+                {{ if ne . "" }}
+                <p class="mb-1">{{ . }}</p>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Skills Section -->
+  <section class="mb-12 print:mb-0 print:ml-2 print:mr-2">
+    <h2 class="text-2xl font-bold mb-4 print:mb-0 print:ml-0">{{ .Site.Params.skills }}</h2>
+    <div class="flex flex-wrap gap-2">
+      {{ range .Params.skills }}
+        {{ if .primary_tools }}
+          <div class="p-0 rounded-lg">
+            <h3 class="text-lg font-bold">{{ $.Site.Params.primary_tools }}</h3>
+            {{ range .primary_tools }}
+              <span class="px-2 py-2 bg-orange-100 text-gray-600 rounded-full text-xs inline-block m-1 ml-0">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+        {{ if .experienced_technologies }}
+          <div class="p-1 rounded-lg">
+            <h3 class="text-lg font-bold">{{ $.Site.Params.experienced_technologies }}</h3>
+            {{ range .experienced_technologies }}
+              <span class="px-2 py-2 bg-orange-100 text-gray-600 rounded-full text-xs inline-block m-1 ml-0">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+        {{ if .currently_learning }}
+          <div class="p-1 rounded-lg">  
+            <h3 class="text-lg font-bold">{{ $.Site.Params.currently_learning }}</h3>
+            {{ range .currently_learning }}
+              <span class="px-2 py-2 bg-orange-100 text-gray-600 rounded-full text-xs inline-block m-1 ml-0">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  {{ if .Params.projects }}
+  <section class="mb-12 print:ml-2 print:mr-2">
+    <h2 class="text-2xl font-bold mb-6">{{ .Site.Params.projects }}</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {{ range .Params.projects }}
+        <div class="bg-white shadow-sm hover:shadow-md transition rounded-lg overflow-hidden">
+          {{ if .image }}
+            <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-48 object-cover">
+          {{ end }}
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-1">{{ .title }}</h3>
+            <div class="text-gray-500 text-sm mb-2">{{ .date }}</div>
+            <p class="text-gray-700 mb-3">{{ .description }}</p>
+            
+            {{ if .technologies }}
+              <div class="flex flex-wrap gap-1 mb-3">
+                {{ range .technologies }}
+                  <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+            
+            <div class="flex space-x-3">
+              {{ if .website }}
+                <a href="{{ .website }}" target="_blank" class="text-blue-600 hover:underline text-sm">
+                  {{ .Site.Params.website }}
+                </a>
+              {{ end }}
+              {{ if .source }}
+                <a href="{{ .source }}" target="_blank" class="text-blue-600 hover:underline text-sm">
+                  {{ .Site.Params.source }}
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Contact -->
+  <section class="mb-6 print:hidden">
+    <h2 class="text-2xl font-bold mb-4">{{ .Site.Params.contact }}</h2>
+    <p class="text-gray-700">{{ .Site.Params.contact_text }}</p>
+  </section>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{{ end }} 

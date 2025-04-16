@@ -1,3 +1,13 @@
+baseURL = "https://aimtune.dev/"
+languageCode = "en-us"
+title = "AimTune"
+theme = ""
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Software Engineer, Entrepreneur, and Builder"
+  author = "AimTune"
+
 [markup.goldmark.renderer]
     unsafe = true
 
@@ -9,3 +19,17 @@
 [services]
   [services.disqus]
     shortname = 'aimtune-dev'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3

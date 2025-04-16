@@ -1,7 +1,7 @@
 +++
 aliases = ["posts","articles","blog","series","docs"]
-title = "Posts"
-author = "Hamza Agar"
+title = "Bloglar"
+author = "Hamza Ağar"
 tags = ["index"]
-description = "Posts"
+description = "Bloglar"
 +++

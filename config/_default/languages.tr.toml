@@ -1,8 +1,14 @@
+languageName = "Türkçe"
+[tr]
+languageName = "Türkçe"
+
 [params.author]
 name = "Hamza Ağar"
+only_name = "Hamza"
+surname = "Ağar"
 image = "img/hamza2.png"
-headline = "Mid. Level Software Developer [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
-bio = "Mid. Level Software Developer"
+headline = "Orta Seviye Yazılım Geliştirici [**@DogusTeknoloji**](https://www.d-teknoloji.com.tr/)"
+bio = "Orta Seviye Yazılım Geliştirici"
 links = [
     { linkedin = "https://linkedin.com/in/hamzaagar" },
     { github = "https://github.com/aimtune" },
@@ -26,3 +32,19 @@ links = [
     #   { whatsapp = "https://wa.me/phone-number" },
     #   { youtube = "https://youtube.com/username" },
 ]
+
+[params]
+skills = "Yetenekler"
+work_experience = "İş Deneyimi"
+education = "Eğitim"
+projects = "Projeler"
+contact = "İletişim"
+about = "Hakkımda"
+primary_tools = "Ana Araçlar"
+experienced_technologies = "Deneyimli Teknolojiler"
+currently_learning = "Şu An Öğrendiklerim"
+website = "Web Sitesi"
+source = "Kaynak Kod"
+contact_text = "Soru ve fırsatlar için bana ulaşmaktan çekinmeyin."
+profile_subtitle = "Orta Seviye Yazılım Geliştirici"
+greeting = "Merhaba, Ben"

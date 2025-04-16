@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow-sm print:hidden">
+        <div class="container max-w-5xl mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="/" class="text-xl font-bold text-gray-800">{{ .Site.Title }}</a>
+                <div class="space-x-4">
+                    <a href="/" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="/cv/" class="text-gray-600 hover:text-blue-600">CV</a>
+                    <a href="/blog/" class="text-gray-600 hover:text-blue-600">Blog</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container max-w-5xl mx-auto px-4">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="bg-white mt-12 py-8 border-t print:hidden">
+        <div class="container max-w-5xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
