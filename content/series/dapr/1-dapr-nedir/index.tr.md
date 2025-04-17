@@ -252,5 +252,5 @@ Okuduğunuz için teşşekkürler. Sonraki yazıda görüşürüz :smiling_face_
 ## Kaynakça
 
 1. [Dapr Documentation](https://docs.dapr.io/)
-2. [Practical Microservices with Dapr and .NET - Second Edition, Richard L. Weeks, Packt Publishing, 2022](https://www.amazon.com/Practical-Microservices-Dapr-NET-cloud-native/dp/1803248122)
+2. [Practical Microservices with Dapr and .NET - Second Edition, Davide Bedin, Packt Publishing, 2022](https://www.amazon.com/Practical-Microservices-Dapr-NET-cloud-native/dp/1803248122)
 3. [Dapr'ın GitHub Repository](https://github.com/dapr/dapr)
