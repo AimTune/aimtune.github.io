@@ -19,15 +19,25 @@ cascade:
   showSummary: true
 ---
 
+{{< lead >}}
+Dapr (Distributed Application Runtime), mikro hizmet tabanlı dağıtık uygulamaların geliştirilmesini ve işletilmesini basitleştiren, olay odaklı, taşınabilir bir çalışma zamanıdır.
+{{< /lead >}}
+
+{{< alert "circle-info" >}}
+Bu yazı serimizde, Dapr kavramını, temel bileşenlerini ve teknolojilerini ele alıyor olacağım. Dapr, uzun süredir üzerinde çalıştığım bir araç. Bu araç, Microsoft tarafından geliştirilmeye başlanmış, daha sonradan ise CNCF'ye taşınmış bir araçtır.
+{{< /alert >}}
+
 Selamlar,
 
 Son günlerde, Conversation modülü sayesinde ve daha öncesinde geliştirilmiş Workflow modülü sayesinde, çalışmakta olduğum Chatbot ürününe de çokça katkı sağlayacağına inandığım bir araç haline geldi. Bu kaynağı ise Türkçe içerik olmamasından dolayı ve bana da YouTube üzerinde paylaşılan bana ait bir anlatımdan gelen geri dönüşler üzerine yazıyorum.
 
-Bu yazı serimizde, Dapr kavramını, temel bileşenlerini ve teknolojilerini ele alıyor olacağım. Dapr, uzun süredir üzerinde çalıştığım bir araç. Bu araç, Microsoft tarafından geliştirilmeye başlanmış, daha sonradan ise CNCF'ye taşınmış bir araçtır.
-
 ## Dapr Nedir?
 
-Dapr (Distributed Application Runtime), mikro hizmet tabanlı dağıtık uygulamaların geliştirilmesini ve işletilmesini basitleştiren, olay odaklı, taşınabilir bir çalışma zamanıdır. Dapr; durum yönetimi (state management), yayın/abonelik (pub/sub), aktörler (actors), sıraya bağlama (bindings), kriptografi ve dağıtılmış izleme gibi temel yapı taşlarını sunarak geliştiricinin yeniden kullanılabilir kod yazmasını sağlar.
+Dapr; durum yönetimi (state management), yayın/abonelik (pub/sub), aktörler (actors), sıraya bağlama (bindings), kriptografi ve dağıtılmış izleme gibi temel yapı taşlarını sunarak geliştiricinin yeniden kullanılabilir kod yazmasını sağlar.
+
+{{< alert "circle-info" >}}
+Dapr, HTTP veya gRPC üzerinden erişilebilen entegre API'ler aracılığıyla mikro hizmetler arasında servis çağrısı, durum yönetimi, yayın/abonelik, işlem akışları (workflow), aktör modeli ve daha fazlasını sağlar. Çok sayıda programlama dilini destekler ve çoklu altyapı (Kubernetes, sanal makineler, sunucusuz platformlar) üzerinde çalışabilir.
+{{< /alert >}}
 
 Dapr, HTTP veya gRPC üzerinden erişilebilen entegre API'ler aracılığıyla mikro hizmetler arasında servis çağrısı, durum yönetimi, yayın/abonelik, işlem akışları (workflow), aktör modeli ve daha fazlasını sağlar. Çok sayıda programlama dilini destekler ve çoklu altyapı (Kubernetes, sanal makineler, sunucusuz platformlar) üzerinde çalışabilir. Ayrıca Dapr, programlama dilinden bağımsızdır ve herhangi bir programlama dilinde kullanılabilir. Bunu HTTP veya gRPC üzerinden erişilebilen entegre API'ler aracılığıyla sağlar.
 
@@ -45,31 +55,137 @@ Modern bulut ve mikro hizmet tabanlı mimarilerde, çapraz kesen sorumlulukları
 
 ## Dapr'ın Temel Bileşenleri
 
+{{< figure
+    src="/images/series/dapr/dapr-building-blocks.png"
+    alt="Dapr Building Blocks"
+    caption="Dapr'ın Temel Yapı Taşları (<a href='https://docs.dapr.io/concepts/building-blocks-concept/'>Dapr Building Blocks</a>)"
+    >}}
+
 ### Building Blocks
 
-1. **Service Invocation:** Microservice'ler arasında güvenli ve doğrudan metod çağrıları yapmanızı sağlar. HTTP veya gRPC protokolleri üzerinden çalışır.
+{{< alert "circle-info" >}}
+Her bir building block, Dapr'ın sidecar'ı üzerinden erişilebilen HTTP/gRPC API'leri sunar. Bu API'ler sayesinde, dil ve platform bağımsız olarak mikroservis mimarinizi geliştirebilirsiniz.
+{{< /alert >}}
 
-2. **Publish & Subscribe:** Microservice'ler arasında güvenli ve ölçeklenebilir mesajlaşma sağlar. Event-driven mimariler için idealdir.
+#### 1. Service Invocation
+Mikroservisler arası iletişimin temel yapı taşı. HTTP veya gRPC protokolleri üzerinden güvenli ve doğrudan metod çağrıları yapmanızı sağlar.
 
-3. **Workflow:** Farklı microservice'ler arasında mantık orkestrasyonu yapmanızı sağlar. Uzun süren iş akışlarını yönetmek için kullanılır.
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/invoke`
+- Yerleşik servis keşfi (service discovery)
+- Otomatik yük dengeleme
+- Yerleşik dağıtık izleme
+{{< /alert >}}
 
-4. **State Management:** Uzun süreli stateful servisler oluşturmanızı sağlar. Redis, MongoDB gibi farklı state store'lar ile çalışabilir.
+#### 2. Publish & Subscribe
+Event-driven mimariler için ideal mesajlaşma modeli. Mikroservisler arasında güvenli ve ölçeklenebilir mesajlaşma sağlar.
 
-5. **Bindings:** Harici sistemlerle (Kafka, Redis, RabbitMQ vb.) entegrasyon yapmanızı sağlar. Input ve output binding'ler olarak ikiye ayrılır.
+{{< alert "code" >}}
+**Endpoints:** `/v1.0/publish`, `/v1.0/subscribe`
+- Gevşek bağlı (loosely coupled) iletişim
+- At-least-once teslimat garantisi
+- Çoklu mesaj broker desteği
+{{< /alert >}}
 
-6. **Actors:** Kod ve veriyi yeniden kullanılabilir actor nesnelerinde kapsüllemenizi sağlar. Stateful microservice'ler için idealdir. Bu araç için ayrıca Actor Model yaklaşımına da değineceğiz.
+#### 3. Workflow
+Farklı mikroservisler arasında mantık orkestrasyonu yapmanızı sağlar. Uzun süren iş akışlarını yönetmek için kullanılır.
 
-7. **Secrets Management:** Uygulamanızdan güvenli bir şekilde secret'lara erişmenizi sağlar. Kubernetes Secrets, Azure Key Vault gibi sistemlerle entegre çalışır.
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/workflow`
+- Durum yönetimi ve hata toleransı
+- Diğer building block'larla entegrasyon
+- Retry ve error handling
+{{< /alert >}}
 
-8. **Configuration:** Uygulama konfigürasyonlarını yönetmenizi ve değişikliklerden haberdar olmanızı sağlar.
+#### 4. State Management
+Uzun süreli stateful servisler oluşturmanızı sağlar. Redis, MongoDB gibi farklı state store'lar ile çalışabilir.
 
-9. **Distributed Lock:** Uygulamanızdan paylaşılan kaynaklara karşılıklı olarak özel erişim sağlar.
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/state`
+- Key/Value tabanlı state yönetimi
+- Concurrency ve consistency kontrolleri
+- State encryption desteği
+{{< /alert >}}
 
-10. **Cryptography:** Anahtarları uygulamanıza açığa çıkarmadan şifreleme gibi işlemleri yapmanızı sağlar.
+#### 5. Bindings
+Harici sistemlerle entegrasyon için çift yönlü bağlantı sağlar. 70'den fazla hazır binding komponenti mevcuttur.
 
-11. **Jobs:** İşlerin planlanmasını ve orkestrasyonunu yönetmenizi sağlar.
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/bindings`
+- Input ve output binding'ler
+- Trigger-based işlemler
+- Özel binding geliştirme imkanı
+{{< /alert >}}
 
-12. **Conversation:** Large Language Models (LLMs) ile prompt'ları kullanmanızı sağlar. Chatbot'lar ve AI destekli uygulamalar için idealdir.
+#### 6. Actors
+Virtual Actor pattern implementasyonu. Stateful mikroservisler için idealdir.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/actors`
+- Tek iş parçacıklı execution modeli
+- Timer ve reminder desteği
+- Reentrancy kontrolü
+{{< /alert >}}
+
+#### 7. Secrets Management
+Hassas verilerin güvenli yönetimi için kullanılır. Kubernetes Secrets, Azure Key Vault gibi sistemlerle entegre çalışır.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/secrets`
+- Çoklu secret store desteği
+- Secret scoping ve access control
+- Güvenli secret rotasyonu
+{{< /alert >}}
+
+#### 8. Configuration
+Uygulama konfigürasyonlarını yönetmenizi ve değişikliklerden haberdar olmanızı sağlar.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0/configuration`
+- Real-time config güncellemeleri
+- Config subscription modeli
+- Versiyonlama desteği
+{{< /alert >}}
+
+#### 9. Distributed Lock
+Paylaşılan kaynaklara güvenli erişim için kullanılır.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0-alpha1/lock`
+- Mutual exclusion garantisi
+- Deadlock prevention
+- Lock timeout mekanizması
+{{< /alert >}}
+
+#### 10. Cryptography
+Güvenli kriptografik işlemler için kullanılır.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0-alpha1/crypto`
+- Key yönetimi
+- Encryption/Decryption işlemleri
+- HSM entegrasyonu
+{{< /alert >}}
+
+#### 11. Jobs
+İş planlama ve orkestrasyon için kullanılır.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0-alpha1/jobs`
+- Zamanlanmış görevler
+- Batch processing
+- ETL iş akışları
+{{< /alert >}}
+
+#### 12. Conversation
+LLM entegrasyonları için modern arayüz sağlar.
+
+{{< alert "code" >}}
+**Endpoint:** `/v1.0-alpha1/conversation`
+- Prompt yönetimi ve caching
+- PII maskeleme
+- Çoklu LLM desteği
+{{< /alert >}}
 
 ### Components
 
@@ -119,17 +235,22 @@ Dapr ile ilgili sorunları teşhis etmek ve çözmek için araçlar ve teknikler
 - API logları
 - Debugging araçları
 
+{{< alert "lightbulb" >}}
+**İpucu:** Dapr'ın sunduğu building block'ları kullanarak, uygulamalarınızı daha basit ve güvenli hale getirebilirsiniz.
+{{< /alert >}}
 
 ### Sonuç
 
 Dapr, mikro hizmet tabanlı uygulamaların geliştirilmesi ve işletilmesi için birçok avantaj sunan bir çalışma zamanıdır. Sidecar pattern'i kullanarak, Dapr'ın sunduğu building block'ları kullanarak, uygulamalarınızı daha basit ve güvenli hale getirebilirsiniz.
 
+{{< alert "bookmark" >}}
 Sonraki yazılarımda, Dapr'ın bu building block'larından ilk olarak Service Invocation'ın nasıl çalıştığını, nasıl entegre edildiğini ve nasıl kullanıldığını göreceğiz.
+{{< /alert >}}
 
 Okuduğunuz için teşşekkürler. Sonraki yazıda görüşürüz :smiling_face_with_smiling_eyes:
 
 ## Kaynakça
 
 1. [Dapr Documentation](https://docs.dapr.io/)
-2. Practical Microservices with Dapr and .NET - Second Edition, Richard L. Weeks, Packt Publishing, 2022
+2. [Practical Microservices with Dapr and .NET - Second Edition, Richard L. Weeks, Packt Publishing, 2022](https://www.amazon.com/Practical-Microservices-Dapr-NET-cloud-native/dp/1803248122)
 3. [Dapr'ın GitHub Repository](https://github.com/dapr/dapr)
