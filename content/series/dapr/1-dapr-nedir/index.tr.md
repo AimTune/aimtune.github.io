@@ -126,4 +126,10 @@ Dapr, mikro hizmet tabanlı uygulamaların geliştirilmesi ve işletilmesi için
 
 Sonraki yazılarımda, Dapr'ın bu building block'larından ilk olarak Service Invocation'ın nasıl çalıştığını, nasıl entegre edildiğini ve nasıl kullanıldığını göreceğiz.
 
-Okuduğunuz için teşşekkürler. Sonraki yazıda görüşürüz :)
+Okuduğunuz için teşşekkürler. Sonraki yazıda görüşürüz :smiling_face_with_smiling_eyes:
+
+## Kaynakça
+
+1. [Dapr Documentation](https://docs.dapr.io/)
+2. Practical Microservices with Dapr and .NET - Second Edition, Richard L. Weeks, Packt Publishing, 2022
+3. [Dapr'ın GitHub Repository](https://github.com/dapr/dapr)
