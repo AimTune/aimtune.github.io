@@ -5,7 +5,7 @@ theme = ""
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Software Engineer, Entrepreneur, and Builder"
+  description = "Computer Scientist, Full-Stack Software Engineer, Generative AI & DevOps Enthusiast"
   author = "AimTune"
 
 [markup.goldmark.renderer]
